@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FAQAccordion from '@/components/FAQAccordion';
+import { Button } from '@/components/ui/button';
+---
+
+<BaseLayout title="FAQ — Runway">
+  <section class="section-padding pt-32">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-16">
+          <h1 class="mb-6">
+            Frequently asked questions
+          </h1>
+          <p class="text-xl text-muted-foreground leading-relaxed">
+            Everything you need to know about applying for funding.
+          </p>
+        </div>
+
+        <FAQAccordion client:load />
+
+        <div class="mt-16 pt-12 border-t text-center">
+          <h3 class="text-xl font-semibold mb-4">Still have questions?</h3>
+          <p class="text-muted-foreground mb-8">
+            Our team is here to help with your specific situation.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild>
+              <a href="/contact">Contact us</a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="/apply">Apply now</a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,262 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const prosCons = [
+  {
+    type: "Secured lending",
+    pros: [
+      "Usually cheaper because the lender’s risk is covered by assets.",
+      "Higher limits and longer repayment terms available.",
+      "Suitable for major expansions, M&A, or refinancing projects.",
+    ],
+    cons: [
+      "You must pledge valuable assets—harder for young, asset-light companies.",
+      "Requires valuations, legal work, and due diligence (added cost and time).",
+      "Funds can take longer to reach your account.",
+    ],
+  },
+  {
+    type: "Unsecured lending",
+    pros: [
+      "Faster decisions—no valuations, lighter legal checks.",
+      "Minimal or no up-front fees.",
+      "Accessible for companies without large asset bases.",
+    ],
+    cons: [
+      "Typically more expensive due to higher lender risk.",
+      "Loan sizes and terms are capped—banks rarely exceed ~£40k unsecured.",
+      "Often still requires director credit checks or personal guarantees.",
+    ],
+  },
+];
+
+const securedExamples = [
+  "Asset-backed loan secured against commercial property, plant, or vehicles to fund an acquisition.",
+  "Directors securing borrowing against residential property to unlock larger facilities.",
+  "Invoice finance: advances secured against accounts receivable.",
+];
+
+const unsecuredExamples = [
+  "Working capital loans covering seasonal dips for 2–3 months.",
+  "Short-term cash flow facilities with terms under two years.",
+  "Merchant cash advances repaid via a percentage of card terminal sales.",
+];
+---
+
+<BaseLayout title="Secured vs. Unsecured Loans — Runway">
+  <section class="relative pt-28 md:pt-36 pb-16 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-zinc-100 text-sm font-medium text-zinc-800 mb-5">
+          Compare secured and unsecured business loans
+        </p>
+        <h1 class="text-4xl md:text-[56px] lg:text-[64px] font-heading font-light leading-tight text-black mb-4">
+          Secured vs. unsecured business lending
+        </h1>
+        <p class="text-lg md:text-xl text-neutral-800 leading-relaxed mb-6">
+          “Security” is one of the fastest ways to understand a finance product. This guide breaks down how secured and unsecured loans differ, why lenders care, and what it means for your next round of funding.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="/apply" class="inline-flex items-center justify-center rounded-lg bg-black text-white px-8 py-3 font-semibold hover:bg-black/90 transition-colors">
+            Get a business loan
+          </a>
+          <a href="/resources" class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 py-3 font-semibold text-neutral-900 hover:bg-white/70 transition-colors">
+            Explore more resources
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200 bg-neutral-50">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Table of contents</p>
+        <div class="rounded-2xl border border-neutral-200 bg-white p-6 grid gap-4 md:grid-cols-2">
+          <div>
+            <p class="font-semibold text-neutral-900 mb-2">Start here</p>
+            <ul class="text-sm text-neutral-700 space-y-1">
+              <li>• What's the difference?</li>
+              <li>• Secured vs. unsecured overview</li>
+              <li>• Examples of secured lending</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-neutral-900 mb-2">Dig deeper</p>
+            <ul class="text-sm text-neutral-700 space-y-1">
+              <li>• Unsecured finance explained</li>
+              <li>• Alternatives if you can’t pledge assets</li>
+              <li>• Pros and cons for each option</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto grid gap-10 lg:grid-cols-2 lg:items-start">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Definition</p>
+          <h2 class="text-3xl md:text-4xl font-heading text-black mb-4">What’s the difference?</h2>
+          <p class="text-base text-neutral-700 leading-relaxed mb-4">
+            When lenders talk about “security” they’re asking whether an asset stands behind the facility. Secured loans are asset-backed. Unsecured loans rely on your trading track record and often a personal guarantee.
+          </p>
+          <p class="text-base text-neutral-700 leading-relaxed">
+            Security changes everything—from underwriting speed and facility size to pricing, legal complexity, and who is personally liable if your business can’t repay.
+          </p>
+        </div>
+        <div class="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Quick comparison</p>
+          <div class="space-y-4 text-sm text-neutral-700">
+            <div class="flex items-center justify-between">
+              <span>Collateral required?</span>
+              <span class="font-semibold text-neutral-900">Secured: Yes · Unsecured: No</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span>Typical limit</span>
+              <span class="font-semibold text-neutral-900">Secured: asset value · Unsecured: £40k–£250k</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span>Time to cash</span>
+              <span class="font-semibold text-neutral-900">Secured: Slower · Unsecured: Faster</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span>Pricing</span>
+              <span class="font-semibold text-neutral-900">Secured: Lower APR · Unsecured: Higher APR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200 bg-neutral-50">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto grid gap-10 lg:grid-cols-2">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Secured loans</p>
+          <h3 class="text-3xl font-heading text-black mb-4">Asset-backed borrowing</h3>
+          <p class="text-base text-neutral-700 leading-relaxed mb-4">
+            Secured lending is collateralised against valuable assets—commercial property, vehicles, machinery, or receivables. Because the lender can recover losses by selling the asset, they’re willing to extend larger, longer-term facilities at lower rates.
+          </p>
+          <h4 class="text-lg font-semibold text-neutral-900 mb-2">Examples</h4>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            {securedExamples.map((example) => (
+              <li class="flex gap-3">
+                <span class="text-lime-600 mt-1">●</span>
+                <span>{example}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Unsecured loans</p>
+          <h3 class="text-3xl font-heading text-black mb-4">Borrowing based on trading strength</h3>
+          <p class="text-base text-neutral-700 leading-relaxed mb-4">
+            Unsecured loans skip the collateral but expect strong trading performance. Lenders often set limits as a multiple of turnover and still run director credit checks. Facilities are faster to arrange but carry higher pricing and tighter limits.
+          </p>
+          <h4 class="text-lg font-semibold text-neutral-900 mb-2">Examples</h4>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            {unsecuredExamples.map((example) => (
+              <li class="flex gap-3">
+                <span class="text-lime-600 mt-1">●</span>
+                <span>{example}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-center mb-10">
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Pros & cons</p>
+        <h2 class="text-3xl md:text-4xl font-heading text-black">Which one fits your business?</h2>
+        <p class="text-lg text-neutral-700">
+          Think about time, cost, collateral, and the size of facility you need.
+        </p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        {prosCons.map((set) => (
+          <article class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+            <h3 class="text-2xl font-heading text-black mb-4">{set.type}</h3>
+            <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-2">Pros</p>
+            <ul class="space-y-2 text-sm text-neutral-700 mb-4">
+              {set.pros.map((pro) => (
+                <li class="flex gap-3">
+                  <span class="text-lime-600 mt-1">●</span>
+                  <span>{pro}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-2">Cons</p>
+            <ul class="space-y-2 text-sm text-neutral-700">
+              {set.cons.map((con) => (
+                <li class="flex gap-3">
+                  <span class="text-rose-500 mt-1">●</span>
+                  <span>{con}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200 bg-neutral-50">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center mb-10">
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Still unsure?</p>
+        <h2 class="text-3xl md:text-4xl font-heading text-black mb-4">
+          We’ll guide you through the whole process
+        </h2>
+        <p class="text-lg text-neutral-700">
+          Whether you want the cheapest possible rate or need capital tomorrow, our specialists compare the secured and unsecured market to find the best fit.
+        </p>
+      </div>
+      <div class="max-w-3xl mx-auto rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm text-center">
+        <p class="text-sm text-neutral-500 mb-2">Looking for finance?</p>
+        <h3 class="text-2xl font-heading text-black mb-4">
+          See your Funding Options in minutes
+        </h3>
+        <p class="text-base text-neutral-700 mb-6">
+          No-obligation quotes · Soft credit search · Access to 80+ lenders
+        </p>
+        <a href="/apply" class="inline-flex items-center justify-center rounded-lg bg-black text-white px-8 py-3 font-semibold hover:bg-black/90 transition-colors">
+          Compare options
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-center rounded-3xl border border-neutral-200 bg-white p-10 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Need help deciding?</p>
+        <h2 class="text-3xl md:text-4xl font-heading text-black mb-4">
+          Speak with a funding specialist
+        </h2>
+        <p class="text-lg text-neutral-700 mb-8">
+          Tell us what you’re trying to achieve—we’ll show you secured and unsecured routes, highlight risks like personal guarantees, and introduce lenders who match your appetite.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="/apply" class="inline-flex items-center justify-center rounded-lg bg-black text-white px-8 py-3 font-semibold hover:bg-black/90 transition-colors">
+            Get matched now
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 py-3 font-semibold text-neutral-900 hover:bg-white/70 transition-colors">
+            Talk to us
+          </a>
+        </div>
+        <p class="text-xs text-neutral-500 mt-6">
+          Funding Options by Tide is a credit broker, not a lender. Quotes are subject to status and income. Guarantees and indemnities may be required. This page is for information only and isn’t financial advice—please seek independent counsel before signing any agreement.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

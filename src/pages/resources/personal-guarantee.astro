@@ -1,0 +1,339 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const steps = [
+  {
+    title: "Tell us how much you need",
+    description: "Share a few details about your business, what you need funding for, and how quickly you need it.",
+  },
+  {
+    title: "Compare quotes instantly",
+    description: "We scan 80+ specialist SME lenders and surface matched offers with transparent rates and terms.",
+  },
+  {
+    title: "Apply with expert support",
+    description: "Your dedicated funding specialist guides you through every step until the capital lands in your account.",
+  },
+];
+
+const keyPoints = [
+  {
+    title: "In writing and signed",
+    description: "Guarantees must be written and signed by the guarantor to be enforceable. Some agreements issued as deeds can become unconditional on signing.",
+  },
+  {
+    title: "Negotiate early",
+    description: "If your company is approaching distress, negotiate caps or remedy periods early—your leverage diminishes the closer you are to insolvency.",
+  },
+  {
+    title: "Limit liabilities",
+    description: "Where possible, cap the guarantee amount or link it to a percentage of the facility to avoid unlimited exposure across directors.",
+  },
+];
+
+const learnMore = [
+  "Is the guarantee supported by extra security such as a charge over your home?",
+  "Can the lender demand payment immediately, or must they exhaust other recovery avenues first?",
+  "How were your net assets assessed and what happens if they change?",
+  "Do the terms explain what constitutes default and whether you have a remedy window?",
+];
+
+const cons = [
+  {
+    title: "Higher personal risk",
+    description: "Directors become personally liable for the debt if the business defaults. Insolvency can spill over into personal bankruptcy or long-term credit damage.",
+  },
+  {
+    title: "Commitment can linger",
+    description: "Most guarantees last until the facility is fully repaid. Some lenders retain rights to pursue guarantors for up to six years (12 for deeds).",
+  },
+];
+
+const insurance = [
+  "Personal guarantee insurance can reimburse part of the liability if the lender calls the guarantee—but it rarely covers 100% of the exposure.",
+  "Premiums depend on the guarantee size, business performance and assets pledged.",
+  "Don’t want to sign at all? We’ll look for lenders or structures that waive the personal guarantee requirement.",
+];
+
+const faqs = [
+  {
+    question: "What happens if I default on a personal guarantee?",
+    answer:
+      "The lender can seize the asset you pledged or pursue you personally through the courts. Expect a demand letter referencing the signed agreement, with tight timelines before formal action begins.",
+  },
+  {
+    question: "How long is a personal guarantee valid?",
+    answer:
+      "Most guarantees remain enforceable until the facility is repaid. In the UK, lenders typically have six years from the breach (12 years for deeds) to begin proceedings.",
+  },
+  {
+    question: "When is a personal guarantee unenforceable?",
+    answer:
+      "Potential defences include expiry of the limitation period, fraud, misrepresentation, or material facility changes that you weren’t told about. Always obtain specialist legal advice before relying on these arguments.",
+  },
+];
+---
+
+<BaseLayout title="Personal Guarantees — Runway">
+  <section class="relative pt-28 md:pt-36 pb-16 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-zinc-100 text-sm font-medium text-zinc-800 mb-4">
+          Funding Options by Tide
+        </p>
+        <h1 class="text-4xl md:text-[56px] lg:text-[64px] font-heading font-light leading-tight text-black mb-4">
+          Personal guarantees — what founders need to know
+        </h1>
+        <p class="text-lg md:text-xl text-neutral-800 leading-relaxed mb-6">
+          A personal guarantee is your promise to repay business finance if the company cannot. It gives lenders an extra layer of protection, which can unlock funding but also puts your personal assets on the line.
+        </p>
+        <p class="text-sm text-neutral-500 mb-8">
+          Framed with input from Hannah Newell (Corporate & Commercial LawBrief, Lawbite) and John Baird (insolvency expert, Scotland Debt Solutions).
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="/apply" class="inline-flex items-center justify-center rounded-lg bg-black text-white px-8 py-3 font-semibold hover:bg-black/90 transition-colors">
+            Get finance
+          </a>
+          <a href="/testimonials" class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 py-3 font-semibold text-neutral-900 hover:bg-white/70 transition-colors">
+            Read our reviews
+          </a>
+          <a href="/apply" class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 py-3 font-semibold text-neutral-900 hover:bg-white/70 transition-colors">
+            Get a quote
+          </a>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-3 text-left">
+          <div class="rounded-2xl border border-neutral-200 bg-white p-6">
+            <p class="text-sm text-neutral-500 mb-1">Loan request</p>
+            <p class="text-2xl font-heading text-black mb-4">How much would you like to borrow?</p>
+            <p class="text-sm text-neutral-600">Use our calculator on the Apply page for an instant estimate.</p>
+          </div>
+          <div class="rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col gap-4">
+            <div>
+              <p class="text-sm text-neutral-500 mb-1">What's the loan for?</p>
+              <p class="text-lg font-medium text-neutral-900">Select an option</p>
+            </div>
+            <a href="/apply" class="inline-flex items-center justify-center rounded-lg bg-black text-white px-6 py-3 font-medium hover:bg-black/90 transition-colors">
+              Get a quote
+            </a>
+            <p class="text-xs text-neutral-500">
+              Funding Options is part of Tide. Redirecting won’t impact your credit score.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-neutral-200 bg-white p-6 flex flex-col gap-4">
+            <div>
+              <p class="text-sm text-neutral-500 mb-1">Why Runway</p>
+              <ul class="text-sm text-neutral-700 space-y-2">
+                <li>✔ Expert help throughout the process</li>
+                <li>✔ Access to 80+ lenders</li>
+                <li>✔ Endorsed by British Business Bank</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200 bg-neutral-50">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Benefits</p>
+        <h2 class="text-3xl md:text-4xl font-heading text-black mb-4">Why some directors choose to sign</h2>
+        <p class="text-lg text-neutral-700">
+          Personal guarantees can be the difference between unlocking growth capital and stalling plans.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl bg-white border border-neutral-200 p-6 shadow-sm">
+          <h3 class="text-xl font-heading text-black mb-3">Improve approval odds</h3>
+          <p class="text-sm text-neutral-700 leading-relaxed">
+            Lenders view guarantees as a strong signal of alignment. For early-stage or asset-light SMEs, it can tilt the decision from decline to approve.
+          </p>
+        </article>
+        <article class="rounded-2xl bg-white border border-neutral-200 p-6 shadow-sm">
+          <h3 class="text-xl font-heading text-black mb-3">Secure funds faster</h3>
+          <p class="text-sm text-neutral-700 leading-relaxed">
+            Guarantees reduce lender risk, often shortening underwriting cycles and unlocking larger ticket sizes.
+          </p>
+        </article>
+        <article class="rounded-2xl bg-white border border-neutral-200 p-6 shadow-sm">
+          <h3 class="text-xl font-heading text-black mb-3">Fuel your next milestone</h3>
+          <p class="text-sm text-neutral-700 leading-relaxed">
+            When aligned with a clear growth plan, the extra liability can be worth the upside of reaching the next stage sooner.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">How it works</p>
+          <h2 class="text-3xl md:text-4xl font-heading text-black mb-6">Funding Options workflow</h2>
+          <div class="space-y-6">
+            {steps.map((step, index) => (
+              <div class="flex gap-4">
+                <div class="h-10 w-10 rounded-full bg-lime-100 text-lime-900 flex items-center justify-center font-semibold">
+                  {index + 1}
+                </div>
+                <div>
+                  <p class="text-lg font-semibold text-neutral-900">{step.title}</p>
+                  <p class="text-sm text-neutral-700 leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="mt-8 inline-flex items-center gap-3 text-sm text-neutral-600">
+            <span>Trusted by 17,000+ customers</span>
+            <span class="h-1 w-1 rounded-full bg-neutral-300"></span>
+            <span>Rates from 8.2% APR · 1 month to 30 years</span>
+          </div>
+        </div>
+        <div class="rounded-3xl border border-neutral-200 bg-white p-6 shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
+          <h3 class="text-2xl font-heading text-black mb-4">Representative Example</h3>
+          <p class="text-sm text-neutral-700 mb-6">
+            9.7% APR representative on a £50,000 facility over 24 months. Monthly repayment £2,291.56. Total repayable £54,997.44.
+          </p>
+          <div class="space-y-3 text-sm text-neutral-600">
+            <div class="flex items-center justify-between">
+              <span>Credit score impact</span>
+              <span class="font-semibold text-neutral-900">Soft quote, hard check later</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span>Broker status</span>
+              <span class="font-semibold text-neutral-900">Funding Options (part of Tide)</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span>Lender partners</span>
+              <span class="font-semibold text-neutral-900">80+ specialist providers</span>
+            </div>
+          </div>
+          <a href="/apply" class="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-black text-white px-6 py-3 font-semibold hover:bg-black/90 transition-colors">
+            See matched offers
+          </a>
+          <p class="text-xs text-neutral-500 mt-3">
+            Funding Options is a credit broker, not a lender. Quotes are subject to status and income. Guarantees and indemnities may be required.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200 bg-neutral-50">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Key considerations</p>
+          <h2 class="text-3xl md:text-4xl font-heading text-black mb-4">
+            Before signing a director’s guarantee
+          </h2>
+          <p class="text-lg text-neutral-700">
+            Guarantees “pierce the corporate veil”. You’re no longer shielded by limited liability, so scrutinise the terms.
+          </p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          {keyPoints.map((item) => (
+            <article class="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+              <h3 class="text-xl font-heading text-black mb-3">{item.title}</h3>
+              <p class="text-sm text-neutral-700 leading-relaxed">{item.description}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-10 rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm">
+          <h3 class="text-2xl font-heading text-black mb-4">Learn more about the terms</h3>
+          <ul class="space-y-2 text-sm text-neutral-700">
+            {learnMore.map((point) => (
+              <li class="flex gap-3">
+                <span class="text-lime-600 mt-1">●</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto grid gap-8 lg:grid-cols-2">
+        {cons.map((item) => (
+          <article class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+            <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-2">Cons</p>
+            <h3 class="text-2xl font-heading text-black mb-3">{item.title}</h3>
+            <p class="text-sm text-neutral-700 leading-relaxed">{item.description}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-12 rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm">
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Other issues</p>
+        <h3 class="text-2xl font-heading text-black mb-4">Consider insurance—and alternatives</h3>
+        <ul class="space-y-2 text-sm text-neutral-700 mb-6">
+          {insurance.map((item) => (
+            <li class="flex gap-3">
+              <span class="text-lime-600 mt-1">●</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/contact" class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-6 py-3 font-medium text-neutral-900 hover:bg-neutral-50">
+          Talk to a funding specialist
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200 bg-neutral-50">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center mb-10">
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">FAQs</p>
+        <h2 class="text-3xl md:text-4xl font-heading text-black">Personal guarantee essentials</h2>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-4">
+        {faqs.map((faq) => (
+          <details class="group rounded-2xl border border-neutral-200 bg-white p-5">
+            <summary class="flex cursor-pointer items-center justify-between text-lg font-semibold text-neutral-900">
+              {faq.question}
+              <span class="ml-4 text-neutral-500 group-open:rotate-45 transition-transform text-2xl leading-none">+</span>
+            </summary>
+            <p class="mt-3 text-sm text-neutral-700 leading-relaxed">
+              {faq.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 border-t border-neutral-200">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto rounded-3xl border border-neutral-200 bg-white p-10 text-center shadow-[0_20px_80px_rgba(15,23,42,0.08)]">
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Next step</p>
+        <h2 class="text-3xl md:text-4xl font-heading text-black mb-4">
+          Estimate your costs and compare lenders today
+        </h2>
+        <p class="text-lg text-neutral-700 mb-8">
+          Use our calculator to model different loan amounts and terms—then let our specialists match you with lenders who fit your appetite for guarantees.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="/apply" class="inline-flex items-center justify-center rounded-lg bg-black text-white px-8 py-3 font-semibold hover:bg-black/90 transition-colors">
+            Start your quote
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 py-3 font-semibold text-neutral-900 hover:bg-white/70 transition-colors">
+            Speak to an expert
+          </a>
+        </div>
+        <p class="text-xs text-neutral-500 mt-6">
+          This page is for information only and is not financial advice. Always consult independent professionals before making decisions that could impact your personal assets.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

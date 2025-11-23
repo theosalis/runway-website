@@ -1,0 +1,67 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const guides = [
+  {
+    title: "Personal Guarantee",
+    description: "Understand when lenders require a personal guarantee, what it means for founders, and how to negotiate the terms.",
+    href: "#personal-guarantee",
+  },
+  {
+    title: "Secured vs. Unsecured Loans",
+    description: "Compare collateral-backed lending with unsecured offers so you can pick the right structure for each financing need.",
+    href: "#secured-vs-unsecured",
+  },
+];
+---
+
+<BaseLayout title="Resources — Runway">
+  <section class="relative pt-28 md:pt-36 pb-20 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <p class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-zinc-100 text-sm font-medium text-zinc-800 mb-4">
+          Guides & Playbooks
+        </p>
+        <h1 class="text-4xl md:text-[56px] lg:text-[64px] font-heading font-light leading-tight text-black mb-6">
+          Resources to navigate SME lending
+        </h1>
+        <p class="text-lg md:text-xl text-neutral-800 leading-relaxed mb-4">
+          Deep dives that help you understand the fine print, structure better deals, and move faster when funding matters most.
+        </p>
+        <p class="text-sm text-neutral-500">
+          We’ll keep expanding this library—starting with the guides below.
+        </p>
+      </div>
+
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        {guides.map((guide) => (
+          <article class="rounded-2xl border border-neutral-200 bg-white p-6 shadow-[0_8px_40px_rgba(15,23,42,0.06)] hover:-translate-y-1 hover:shadow-[0_16px_50px_rgba(15,23,42,0.08)] transition-all duration-300">
+            <p class="text-xs font-semibold tracking-widest text-lime-700 uppercase mb-3">How-to Guide</p>
+            <h2 class="text-2xl font-heading text-black mb-3">{guide.title}</h2>
+            <p class="text-sm md:text-base text-neutral-700 leading-relaxed mb-6">
+              {guide.description}
+            </p>
+            <div class="flex items-center justify-between text-sm font-medium text-neutral-900">
+              <span>Full walkthrough coming soon</span>
+              <span class="text-lime-600">Stay tuned →</span>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="max-w-3xl mx-auto mt-16 text-center border border-dashed border-neutral-300 rounded-2xl p-8 bg-neutral-50">
+        <p class="text-sm uppercase tracking-[0.2em] text-neutral-500 mb-3">Need something else?</p>
+        <h3 class="text-2xl md:text-3xl font-heading text-black mb-4">
+          Tell us which topics you’d like next and we’ll add them to the roadmap.
+        </h3>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white/80 px-6 py-3 text-neutral-900 font-medium hover:bg-white transition-colors"
+        >
+          Request a guide
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

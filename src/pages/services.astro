@@ -1,0 +1,119 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+
+const services = [
+  {
+    title: "Working Capital",
+    description: "Keep your business running smoothly with short-term funding for day-to-day operations.",
+    features: [
+      "€5,000 to €250,000",
+      "3 to 36 months",
+      "Approved in hours",
+      "Use for inventory, payroll, or operational costs"
+    ]
+  },
+  {
+    title: "Asset Finance",
+    description: "Purchase machinery, vehicles, or technology without depleting your cash reserves.",
+    features: [
+      "€10,000 to €500,000",
+      "12 to 84 months",
+      "Asset-backed financing",
+      "Preserve working capital"
+    ]
+  },
+  {
+    title: "Invoice Financing",
+    description: "Unlock cash tied up in unpaid invoices and improve cash flow instantly.",
+    features: [
+      "Up to 90% of invoice value",
+      "Funding within 24 hours",
+      "No need to wait for customer payments",
+      "Perfect for B2B businesses"
+    ]
+  },
+  {
+    title: "Growth & Acquisition Loans",
+    description: "Scale your business, enter new markets, or acquire competitors with strategic funding.",
+    features: [
+      "€50,000 to €500,000",
+      "12 to 60 months",
+      "Flexible repayment structures",
+      "Support for acquisitions and expansion"
+    ]
+  },
+  {
+    title: "Revolving Credit Lines",
+    description: "Access flexible credit when you need it, pay interest only on what you use.",
+    features: [
+      "€10,000 to €250,000 limit",
+      "Draw and repay as needed",
+      "Interest only on used funds",
+      "Ideal for seasonal businesses"
+    ]
+  },
+  {
+    title: "Bridge Financing",
+    description: "Short-term funding to bridge gaps between transactions or secure time-sensitive opportunities.",
+    features: [
+      "€20,000 to €500,000",
+      "3 to 12 months",
+      "Fast approval and funding",
+      "Bridge property purchases, acquisitions"
+    ]
+  },
+];
+---
+
+<BaseLayout title="Services — Runway">
+  <section class="section-padding pt-32">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl mb-20">
+        <h1 class="mb-6">
+          Financing for every stage
+        </h1>
+        <p class="text-xl text-muted-foreground leading-relaxed">
+          From day-to-day operations to strategic expansion, we've got the right funding solution.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl">
+        {services.map((service) => (
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-2xl font-semibold mb-3">{service.title}</h3>
+              <p class="text-muted-foreground leading-relaxed">{service.description}</p>
+            </div>
+            <ul class="space-y-2">
+              {service.features.map((feature) => (
+                <li class="flex items-start text-sm text-muted-foreground">
+                  <span class="mr-2">•</span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-24 max-w-2xl">
+        <Card class="p-12 bg-accent/20">
+          <h3 class="text-2xl font-semibold mb-4">Not sure which option is right?</h3>
+          <p class="text-muted-foreground mb-8 leading-relaxed">
+            Our team can help you find the perfect financing solution for your business needs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <Button asChild>
+              <a href="/apply">Apply now</a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="/contact">Talk to us</a>
+            </Button>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

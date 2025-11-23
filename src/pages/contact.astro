@@ -1,0 +1,97 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+---
+
+<BaseLayout title="Contact — Runway">
+  <section class="section-padding pt-32">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-16">
+          <h1 class="mb-6">Get in touch</h1>
+          <p class="text-xl text-muted-foreground">
+            Have a question? We're here to help.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-16">
+          <!-- Contact Form -->
+          <div>
+            <form class="space-y-6">
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <Label htmlFor="contact-firstName">First name</Label>
+                  <Input id="contact-firstName" placeholder="John" required />
+                </div>
+                <div class="space-y-2">
+                  <Label htmlFor="contact-lastName">Last name</Label>
+                  <Input id="contact-lastName" placeholder="Doe" required />
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <Label htmlFor="contact-email">Email</Label>
+                <Input id="contact-email" type="email" placeholder="john@company.com" required />
+              </div>
+
+              <div class="space-y-2">
+                <Label htmlFor="contact-company">Company (optional)</Label>
+                <Input id="contact-company" placeholder="Your Company Ltd" />
+              </div>
+
+              <div class="space-y-2">
+                <Label htmlFor="contact-message">Message</Label>
+                <Textarea id="contact-message" placeholder="How can we help?" required />
+              </div>
+
+              <Button type="submit" class="w-full">
+                Send message
+              </Button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="space-y-12">
+            <div>
+              <h3 class="text-lg font-semibold mb-3">Email</h3>
+              <a href="mailto:hello@runway.finance" class="text-muted-foreground hover:text-foreground transition-colors">
+                hello@runway.finance
+              </a>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold mb-3">Phone</h3>
+              <p class="text-sm text-muted-foreground mb-2">Mon–Fri, 9am–6pm CET</p>
+              <a href="tel:+442012345678" class="text-muted-foreground hover:text-foreground transition-colors">
+                +44 20 1234 5678
+              </a>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold mb-3">Office</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                Runway Finance Ltd<br />
+                123 Fintech Street<br />
+                London EC2A 4BX<br />
+                United Kingdom
+              </p>
+            </div>
+
+            <div class="pt-6 border-t">
+              <h3 class="text-lg font-semibold mb-3">Need funding now?</h3>
+              <p class="text-sm text-muted-foreground mb-4">
+                Skip the queue and start your application.
+              </p>
+              <Button asChild>
+                <a href="/apply">Apply now</a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

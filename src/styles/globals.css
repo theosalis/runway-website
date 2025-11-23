@@ -1,0 +1,243 @@
+@import url('https://fonts.cdnfonts.com/css/open-sauce-one');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-opensauce: "Open Sauce One";
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --accent: 240 5% 96%;
+    --accent-foreground: 0 0% 9%;
+    --success: 158 64% 52%;
+    --success-foreground: 0 0% 100%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 0 0% 9%;
+    --radius: 0.5rem;
+    
+    /* Playful pastel accents */
+    --pastel-mint: 160 60% 92%;
+    --pastel-mint-dark: 160 50% 45%;
+    --pastel-peach: 15 100% 92%;
+    --pastel-peach-dark: 15 80% 60%;
+    --pastel-lavender: 260 60% 92%;
+    --pastel-lavender-dark: 260 50% 55%;
+    --pastel-sky: 200 70% 92%;
+    --pastel-sky-dark: 200 60% 50%;
+    --pastel-coral: 350 70% 90%;
+    --pastel-coral-dark: 350 65% 55%;
+    --pastel-yellow: 45 100% 92%;
+    --pastel-yellow-dark: 45 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    height: 100%;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-opensauce), '__opensauce_39fbf1', '__opensauce_Fallback_39fbf1', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    position: relative;
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight;
+    font-family: var(--font-opensauce), '__opensauce_39fbf1', '__opensauce_Fallback_39fbf1', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl font-gothic;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+  }
+  
+  .font-sans,
+  .font-heading,
+  .font-gothic,
+  .font-opensauce {
+    font-family: var(--font-opensauce), '__opensauce_39fbf1', '__opensauce_Fallback_39fbf1', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+    animation-fill-mode: both;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-200 ease-out hover:-translate-y-0.5;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .container-narrow {
+    @apply max-w-5xl mx-auto;
+  }
+
+  .animate-marquee-slow {
+    animation: marquee 40s linear infinite;
+  }
+
+  .animate-marquee-slow:hover {
+    animation-play-state: paused;
+  }
+
+  /* Fund Your Dream Steps animations */
+  .step-row {
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .step-hidden {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  .step-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Stagger animation for each step */
+  .step-row[data-index="0"].step-visible {
+    transition-delay: 0ms;
+  }
+
+  .step-row[data-index="1"].step-visible {
+    transition-delay: 150ms;
+  }
+
+  .step-row[data-index="2"].step-visible {
+    transition-delay: 300ms;
+  }
+
+  /* On mobile, reduce translate distance */
+  @media (max-width: 1023px) {
+    .step-hidden {
+      transform: translateX(40px);
+    }
+  }
+
+  .font-opensauce {
+    font-family: var(--font-opensauce), '__opensauce_39fbf1', '__opensauce_Fallback_39fbf1', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  .first-card-overlay-animate {
+    animation: first-card-slide 6s ease-in-out infinite;
+  }
+
+  .offer-card {
+    border-color: #E5E7EB;
+  }
+
+  .offer-card-highlight {
+    border-color: #E5E7EB;
+    animation: offer-border-pulse 5s ease-in-out infinite;
+  }
+
+  .offer-tag {
+    background: #111827;
+    color: #FFFFFF;
+    opacity: 0;
+    transform: translateY(-4px);
+    animation: offer-tag-appear 5s ease-in-out infinite;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes first-card-slide {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes offer-border-pulse {
+  0% {
+    border-color: #E5E7EB;
+  }
+  25% {
+    border-color: #E5E7EB;
+  }
+  40% {
+    border-color: #0F172A;
+  }
+  80% {
+    border-color: #0F172A;
+  }
+  100% {
+    border-color: #E5E7EB;
+  }
+}
+
+@keyframes offer-tag-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  35% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  45% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+

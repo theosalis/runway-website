@@ -1,0 +1,120 @@
+---
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import WebinarBanner from '@/components/WebinarBanner.astro';
+import '@/styles/globals.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  showHeader?: boolean;
+}
+
+const { 
+  title = 'Credit Now — Radically better business lending',
+  description = 'Apply in 5 minutes for up to $500,000. Fast approval, fair terms, no hidden fees.',
+  showHeader = true
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    {showHeader && (
+      <header class="w-full">
+        <Header client:load />
+      </header>
+    )}
+    <main>
+      <slot />
+    </main>
+    <Footer client:load />
+    <style is:global>
+      html {
+        background-color: #000000;
+        overflow-x: hidden;
+        overscroll-behavior-y: none;
+        height: 100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        overscroll-behavior-y: none;
+        position: relative;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script is:inline>
+      // Prevent scrolling beyond header and footer
+      (function() {
+        let ticking = false;
+        let lastTouchY = 0;
+        
+        function preventOverscroll() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          // Prevent scrolling above the top
+          if (scrollTop < 0) {
+            window.scrollTo(0, 0);
+          }
+          
+          // Prevent scrolling below the footer
+          const documentHeight = document.documentElement.scrollHeight;
+          const windowHeight = window.innerHeight;
+          const maxScroll = documentHeight - windowHeight;
+          
+          if (scrollTop > maxScroll + 1) {
+            window.scrollTo(0, maxScroll);
+          }
+          
+          ticking = false;
+        }
+        
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            window.requestAnimationFrame(preventOverscroll);
+            ticking = true;
+          }
+        }, { passive: true });
+        
+        // Prevent overscroll on touch devices
+        document.addEventListener('touchstart', function(e) {
+          lastTouchY = e.touches[0].clientY;
+        }, { passive: true });
+        
+        document.addEventListener('touchmove', function(e) {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const documentHeight = document.documentElement.scrollHeight;
+          const windowHeight = window.innerHeight;
+          const maxScroll = documentHeight - windowHeight;
+          const currentTouchY = e.touches[0].clientY;
+          const touchDelta = currentTouchY - lastTouchY;
+          
+          // Prevent scrolling up when at the top
+          if (scrollTop <= 0 && touchDelta > 0) {
+            e.preventDefault();
+          }
+          // Prevent scrolling down when at the bottom
+          if (scrollTop >= maxScroll && touchDelta < 0) {
+            e.preventDefault();
+          }
+          
+          lastTouchY = currentTouchY;
+        }, { passive: false });
+      })();
+    </script>
+  </body>
+</html>
+

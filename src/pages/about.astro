@@ -1,0 +1,121 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Button } from '@/components/ui/button';
+
+const values = [
+  {
+    title: "Speed",
+    description: "Applications reviewed within hours, not weeks.",
+  },
+  {
+    title: "Transparency",
+    description: "No hidden fees. You'll always know what you're paying.",
+  },
+  {
+    title: "Flexibility",
+    description: "Solutions that adapt to your needs.",
+  },
+  {
+    title: "Support",
+    description: "Real people who understand business.",
+  },
+];
+
+const team = [
+  {
+    name: "Theo",
+    role: "Co-founder",
+  },
+  {
+    name: "Luis",
+    role: "Co-founder",
+  },
+  {
+    name: "Bernardo",
+    role: "Co-founder",
+  },
+];
+---
+
+<BaseLayout title="About — Runway">
+  <!-- Hero -->
+  <section class="section-padding pt-32">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <h1 class="mb-8">
+          Changing how SMEs access capital
+        </h1>
+        <p class="text-xl text-muted-foreground leading-relaxed mb-12">
+          Traditional business lending is broken. Long wait times, confusing terms, endless paperwork. 
+          We're building something better.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section-padding bg-accent/20">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="mb-8">Our mission</h2>
+        <div class="space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <p>
+            Every business deserves access to fair, fast, and flexible financing. We're on a mission to 
+            empower SMEs across Europe with the capital they need to grow.
+          </p>
+          <p>
+            Founded in 2023, Runway connects businesses with multiple lending partners, giving you more 
+            options, better rates, and faster decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section-padding">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <h2 class="mb-12">Our values</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+          {values.map((value) => (
+            <div>
+              <h3 class="text-xl font-semibold mb-2">{value.title}</h3>
+              <p class="text-muted-foreground leading-relaxed">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section-padding bg-accent/20">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <h2 class="mb-12">The team</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {team.map((member) => (
+            <div>
+              <div class="w-24 h-24 rounded-full bg-foreground/5 mb-4" />
+              <h3 class="text-lg font-semibold">{member.name}</h3>
+              <p class="text-sm text-muted-foreground">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding">
+    <div class="container mx-auto px-6 lg:px-8 max-w-4xl">
+      <div class="text-center">
+        <h2 class="mb-8">Ready to grow?</h2>
+        <Button size="lg" asChild>
+          <a href="/apply">Start your application</a>
+        </Button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,1623 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Header from '@/components/Header';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import LoanSlider from '@/components/LoanSlider';
+import RepaymentEstimator from '@/components/RepaymentEstimator';
+import DashboardCalculator from '@/components/DashboardCalculator';
+import FAQAccordion from '@/components/FAQAccordion';
+import TestimonialsMarquee from '@/components/TestimonialsMarquee';
+import FundYourDreamSteps from '@/components/FundYourDreamSteps';
+
+const gridSquares = Array.from({ length: 35 }); // 5 rows × 7 columns = 35 squares
+
+const financingGrid = [
+  {
+    type: 'card',
+    title: 'Working Capital Finance',
+    description: 'Cover day-to-day operations, manage cash flow, and keep things moving.',
+    icon: '💼',
+    href: '/services'
+  },
+  {
+    type: 'card',
+    title: 'Asset<br />Finance',
+    description: 'Fund equipment, machinery, or vehicles without heavy upfront costs.',
+    icon: '⚙️',
+    href: '/services'
+  },
+  {
+    type: 'card',
+    title: 'Invoice<br />Factoring',
+    description: 'Turn outstanding invoices into immediate cash flow.',
+    icon: '📄',
+    href: '/services'
+  },
+  {
+    type: 'card',
+    title: 'Invoice<br />Discounting',
+    description: 'Maintain client relationships while unlocking unpaid invoices.',
+    icon: '💳',
+    href: '/services'
+  },
+  {
+    type: 'image',
+    image: '/features/personlookingup.png',
+    alt: 'Entrepreneur looking upward'
+  },
+  {
+    type: 'card',
+    title: 'Merchant Cash Advance',
+    description: 'Access a lump sum and repay it via future card sales.',
+    icon: '💵',
+    href: '/services'
+  },
+  {
+    type: 'link',
+    title: 'Explore all financing options',
+    href: '/business-loans'
+  },
+  {
+    type: 'card',
+    title: 'Revolving Credit Lines',
+    description: 'Draw and repay capital on demand for ongoing needs.',
+    icon: '🔄',
+    href: '/services'
+  },
+  {
+    type: 'card',
+    title: 'Small Business Loans',
+    description: 'Flexible terms built for founders growing on their timeline.',
+    icon: '📈',
+    href: '/services'
+  }
+];
+---
+
+<BaseLayout showHeader={true}>
+  <div class="min-h-screen flex flex-col">
+    <header class="w-full fixed top-0 left-0 right-0 z-50">
+      <Header client:load />
+    </header>
+
+    {/* NEW HERO - Latest Sky Background */}
+    <section class="relative min-h-screen flex items-center justify-center px-4 lg:px-6 pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
+      {/* Background Image */}
+      <div class="absolute inset-0">
+        <img src="/features/newdarker.png" alt="" class="w-full h-full object-cover" />
+      </div>
+      
+      {/* Grid Background with edge fade */}
+      <div class="absolute inset-0 grid-background pointer-events-none" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.1) 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.1) 80px); background-size: 80px 80px, 80px 80px; mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 0%, black 60%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 0%, black 60%, transparent 100%);"></div>
+      
+      {/* Laser Beams */}
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="laser-beam laser-beam-1">
+          <div class="laser-dot"></div>
+          <div class="laser-tail"></div>
+        </div>
+        <div class="laser-beam laser-beam-2">
+          <div class="laser-dot"></div>
+          <div class="laser-tail"></div>
+        </div>
+        <div class="laser-beam laser-beam-3">
+          <div class="laser-dot"></div>
+          <div class="laser-tail"></div>
+        </div>
+        <div class="laser-beam laser-beam-4">
+          <div class="laser-dot"></div>
+          <div class="laser-tail"></div>
+        </div>
+      </div>
+      
+      {/* Grid Crosses */}
+      <div class="absolute inset-0 pointer-events-none">
+        <svg class="w-full h-full" style="shape-rendering: crispEdges;">
+          <g class="grid-cross" style="transform: translate(160px, 80px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(400px, 160px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(640px, 240px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(320px, 400px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(560px, 480px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(240px, 320px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(720px, 320px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(800px, 160px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(880px, 400px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(960px, 240px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+          <g class="grid-cross" style="transform: translate(1040px, 480px);">
+            <line x1="-4" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-1" />
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" class="cross-line-2" />
+          </g>
+        </svg>
+      </div>
+
+      {/* Content */}
+      <div class="w-full max-w-5xl mx-auto text-center space-y-4 relative z-10">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-opensauce font-medium leading-tight">
+              <span class="text-white">Apply for a business loan</span><br />
+              <span id="subheading-text" class="text-white">in under 10 minutes</span>
+          </h1>
+
+        <p class="text-lg sm:text-xl lg:text-2xl font-opensauce text-white/90 max-w-2xl mx-auto">
+          Apply, compare offers from multiple lenders, and get capital in as little as 24 hours.
+        </p>
+
+        <div class="flex items-center justify-center gap-4 flex-wrap">
+          <div class="relative flex-1 min-w-[300px] max-w-md">
+            <select
+              class="w-full rounded-full border-0 bg-white/95 backdrop-blur-sm px-6 pr-14 py-3.5 text-base font-opensauce text-neutral-500 focus:outline-none focus:ring-2 focus:ring-white/50 appearance-none cursor-pointer shadow-lg"
+            >
+              <option value="">Amount I need</option>
+              <option value="0">$5k - $50k</option>
+              <option value="50000">$50k - $100k</option>
+              <option value="150000">$100k - $250k</option>
+              <option value="300000">$250k - $500k</option>
+              <option value="500000">$500k+</option>
+            </select>
+
+            <svg
+              class="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none text-neutral-600"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+
+          <button class="inline-flex items-center justify-center rounded-full bg-black text-white px-8 py-3.5 font-opensauce font-semibold hover:bg-black/90 transition whitespace-nowrap">
+            Check eligibility
+          </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Dynamic Section -->
+  <section id="dynamic-section" class="relative min-h-screen overflow-hidden flex items-center px-4 lg:px-6 pt-24 lg:pt-32 pb-16 lg:pb-24">
+    <div class="absolute inset-0">
+      <img src="/features/newdarker.png" alt="" class="w-full h-full object-cover rotate-180 -scale-x-100" id="dynamic-sky-background" />
+    </div>
+    <div class="absolute inset-0">
+      <img src="/features/nightdarker.png" alt="" class="w-full h-full object-cover opacity-0" id="dynamic-night-background" style="transform: rotate(180deg) scaleX(-1);" />
+    </div>
+    <div class="relative z-10 w-full max-w-6xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center w-full">
+        {/* Left Column - Heading and Description - Centered Vertically */}
+        <div class="flex-1 space-y-3 max-w-xl text-center lg:text-left">
+          <h2 id="section-heading" class="text-3xl md:text-4xl lg:text-[40px] font-opensauce font-semibold leading-tight text-white transition-colors duration-700">
+            Flexible financing. Built around you.
+          </h2>
+          <p class="text-sm md:text-base text-white/90 font-opensauce max-w-md mx-auto lg:mx-0">
+            Get the funding you need with flexible terms that adapt to your business growth and cash flow needs.
+          </p>
+        </div>
+
+        {/* Right Column - 4 Cards Grid */}
+        <div class="flex-1 w-full lg:max-w-2xl">
+          <div class="grid grid-cols-2 grid-rows-2 gap-4 md:gap-5" style="grid-auto-rows: 1fr;">
+            {/* Card 1 - Top Left */}
+            <article
+              class="group relative overflow-hidden rounded-3xl border border-white/30
+                     shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col p-6 h-full min-h-0"
+              style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));"
+            >
+              <p class="text-[11px] tracking-[0.18em] uppercase text-neutral-500 font-opensauce mb-2">
+                Various credit options
+              </p>
+              <h3 class="text-[18px] md:text-[19px] font-opensauce font-semibold text-neutral-900 mb-2">
+                Get up to $500,000 for your business
+              </h3>
+              <p class="text-sm text-neutral-600 font-opensauce mb-4 flex-1">
+                Choose from asset finance, invoice financing, or lines of credit.
+              </p>
+              <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-neutral-900 text-white
+                          flex items-center justify-center text-xs opacity-0 group-hover:opacity-100
+                          group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+                →
+              </div>
+            </article>
+
+            {/* Card 2 - Top Right */}
+            <article
+              class="group relative overflow-hidden rounded-3xl border border-white/30
+                     shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col p-6 h-full min-h-0"
+              style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));"
+            >
+              <p class="text-[11px] tracking-[0.18em] uppercase text-neutral-500 font-opensauce mb-2">
+                Funding speed
+              </p>
+              <h3 class="text-[18px] md:text-[19px] font-opensauce font-semibold text-neutral-900 mb-2">
+                Same-day funding available
+              </h3>
+              <p class="text-sm text-neutral-600 font-opensauce mb-4 flex-1">
+                Keep your business moving and receive credit decisions in less than a day.
+              </p>
+              <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-neutral-900 text-white
+                          flex items-center justify-center text-xs opacity-0 group-hover:opacity-100
+                          group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+                →
+              </div>
+            </article>
+
+            {/* Card 3 - Bottom Left - Person Image */}
+            <article
+              class="group relative overflow-hidden rounded-3xl border border-white/30
+                     shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col h-full min-h-0"
+            >
+              <div class="relative w-full h-full flex items-end justify-center px-6 pt-6 pb-0 min-h-0">
+                <img src="/features/personlookingup.png" alt="Person looking up" class="w-full h-auto max-h-full object-contain object-bottom" />
+              </div>
+            </article>
+
+            {/* Card 4 - Bottom Right */}
+            <article
+              class="group relative overflow-hidden rounded-3xl border border-white/30
+                     shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col p-6 h-full min-h-0"
+              style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));"
+            >
+              <p class="text-[11px] tracking-[0.18em] uppercase text-neutral-500 font-opensauce mb-2">
+                Easy application
+              </p>
+              <h3 class="text-[18px] md:text-[19px] font-opensauce font-semibold text-neutral-900 mb-2">
+                Apply in as little as 5 minutes
+              </h3>
+              <p class="text-sm text-neutral-600 font-opensauce mb-4 flex-1">
+                Guided flows to collect your data, compare options, and sign loan agreements.
+              </p>
+              <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-neutral-900 text-white
+                          flex items-center justify-center text-xs opacity-0 group-hover:opacity-100
+                          group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+                →
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Spacer Section -->
+  <section id="flexible-financing-section" class="relative min-h-screen overflow-hidden flex items-center px-4 lg:px-6 pt-16 lg:pt-20 pb-12 lg:pb-16">
+    <div class="absolute inset-0">
+      <img src="/features/newdarker.png" alt="" class="w-full h-full object-cover" id="flexible-sky-background" />
+      </div>
+    <div class="absolute inset-0">
+      <img src="/features/nightdarker.png" alt="" class="w-full h-full object-cover opacity-0" id="flexible-night-background" />
+    </div>
+    <div class="relative z-10 w-full max-w-6xl mx-auto">
+      {/* Header + CTA */}
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 md:mb-10">
+        <div class="space-y-3 max-w-xl">
+          <p class="text-xs tracking-[0.22em] uppercase text-white/80 font-opensauce">
+            Funding options
+          </p>
+          <h2 id="funding-heading" class="text-3xl md:text-4xl lg:text-[40px] font-opensauce font-semibold leading-tight text-white">
+            Pick the funding that fits your business.
+      </h2>
+          <p class="text-sm md:text-base text-white/90 font-opensauce max-w-md">
+            One simple application unlocks offers across multiple lenders and credit products. 
+            We help you compare terms, not just rates.
+          </p>
+            </div>
+        <div class="flex md:justify-end">
+          <a
+            href="/business-loans"
+            class="inline-flex items-center justify-center rounded-full bg-white text-black px-6 md:px-7 py-3
+                   font-opensauce text-sm md:text-[15px] font-semibold shadow-lg hover:bg-white/90
+                   hover:shadow-xl hover:scale-[1.02] transition-all duration-200 whitespace-nowrap"
+          >
+            Compare options
+            <svg
+              class="ml-2 h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+                  <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="10 7 17 7 17 14" />
+                </svg>
+          </a>
+        </div>
+      </div>
+      {/* Cards grid */}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+        {/* Working capital */}
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-white/30
+                 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col p-6"
+          style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));"
+        >
+          <p class="text-[11px] tracking-[0.18em] uppercase text-neutral-500 font-opensauce mb-2">
+            Cash flow
+          </p>
+          <h3 class="text-[18px] md:text-[19px] font-opensauce font-semibold text-neutral-900 mb-2">
+            Working capital finance
+          </h3>
+          <p class="text-sm text-neutral-600 font-opensauce mb-4 flex-1">
+            Smooth out seasonality and cover day-to-day expenses without stressing your cash balance.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[11px] font-opensauce text-neutral-600">
+            <span class="px-2 py-1 rounded-full bg-neutral-100">Short-term</span>
+            <span class="px-2 py-1 rounded-full bg-neutral-100">From $10k</span>
+              </div>
+          <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-neutral-900 text-white
+                      flex items-center justify-center text-xs opacity-0 group-hover:opacity-100
+                      group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+            →
+          </div>
+        </article>
+        {/* Asset finance */}
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-white/30
+                 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col p-6"
+          style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));"
+        >
+          <p class="text-[11px] tracking-[0.18em] uppercase text-neutral-500 font-opensauce mb-2">
+            Equipment & vehicles
+          </p>
+          <h3 class="text-[18px] md:text-[19px] font-opensauce font-semibold text-neutral-900 mb-2">
+            Asset & equipment finance
+          </h3>
+          <p class="text-sm text-neutral-600 font-opensauce mb-4 flex-1">
+            Finance machinery, vehicles, or technology without tying up your working capital.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[11px] font-opensauce text-neutral-600">
+            <span class="px-2 py-1 rounded-full bg-neutral-100">Secured</span>
+            <span class="px-2 py-1 rounded-full bg-neutral-100">Longer terms</span>
+          </div>
+          <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+            →
+          </div>
+        </article>
+        {/* Invoice finance */}
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-white/30
+                 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col p-6"
+          style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));"
+        >
+          <p class="text-[11px] tracking-[0.18em] uppercase text-neutral-500 font-opensauce mb-2">
+            Outstanding invoices
+          </p>
+          <h3 class="text-[18px] md:text-[19px] font-opensauce font-semibold text-neutral-900 mb-2">
+            Invoice finance
+          </h3>
+          <p class="text-sm text-neutral-600 font-opensauce mb-4 flex-1">
+            Unlock cash tied up in unpaid invoices, while keeping customer relationships intact.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[11px] font-opensauce text-neutral-600">
+            <span class="px-2 py-1 rounded-full bg-neutral-100">B2B businesses</span>
+            <span class="px-2 py-1 rounded-full bg-neutral-100">Rolling facility</span>
+          </div>
+          <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+            →
+          </div>
+        </article>
+        {/* Revolving credit line */}
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-white/30
+                 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col p-6"
+          style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));"
+        >
+          <p class="text-[11px] tracking-[0.18em] uppercase text-neutral-500 font-opensauce mb-2">
+            Flexible access
+          </p>
+          <h3 class="text-[18px] md:text-[19px] font-opensauce font-semibold text-neutral-900 mb-2">
+            Revolving credit line
+          </h3>
+          <p class="text-sm text-neutral-600 font-opensauce mb-4 flex-1">
+            Draw funds when you need them, pay interest only on what you use, and top up as you repay.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[11px] font-opensauce text-neutral-600">
+            <span class="px-2 py-1 rounded-full bg-neutral-100">On-demand</span>
+            <span class="px-2 py-1 rounded-full bg-neutral-100">Reusable</span>
+          </div>
+          <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+            →
+          </div>
+        </article>
+        {/* Merchant cash advance */}
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-white/30
+                 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col p-6"
+          style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));"
+        >
+          <p class="text-[11px] tracking-[0.18em] uppercase text-neutral-500 font-opensauce mb-2">
+            Card takings
+          </p>
+          <h3 class="text-[18px] md:text-[19px] font-opensauce font-semibold text-neutral-900 mb-2">
+            Merchant cash advance
+          </h3>
+          <p class="text-sm text-neutral-600 font-opensauce mb-4 flex-1">
+            Borrow against future card sales and repay automatically as your customers pay you.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[11px] font-opensauce text-neutral-600">
+            <span class="px-2 py-1 rounded-full bg-neutral-100">Retail & hospitality</span>
+            <span class="px-2 py-1 rounded-full bg-neutral-100">Variable repayments</span>
+          </div>
+          <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+            →
+          </div>
+        </article>
+        {/* Classic term loan */}
+        <article
+          class="group relative overflow-hidden rounded-3xl border border-white/30
+                 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-250 flex flex-col p-6"
+          style="background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));"
+        >
+          <p class="text-[11px] tracking-[0.18em] uppercase text-neutral-500 font-opensauce mb-2">
+            Longer-term
+          </p>
+          <h3 class="text-[18px] md:text-[19px] font-opensauce font-semibold text-neutral-900 mb-2">
+            Small business term loan
+          </h3>
+          <p class="text-sm text-neutral-600 font-opensauce mb-4 flex-1">
+            Fixed-term funding for larger investments like hiring, expansion, or acquisitions.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[11px] font-opensauce text-neutral-600">
+            <span class="px-2 py-1 rounded-full bg-neutral-100">Fixed schedule</span>
+            <span class="px-2 py-1 rounded-full bg-neutral-100">Up to $500k+</span>
+          </div>
+          <div class="absolute bottom-4 right-4 h-8 w-8 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+            →
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  
+
+    <style>
+      .laser-beam {
+        position: absolute;
+      }
+
+      .laser-dot {
+        width: 3px;
+        height: 3px;
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 6px rgba(255, 255, 255, 0.3);
+        z-index: 2;
+        opacity: 0.7;
+      }
+
+      .laser-tail {
+        position: absolute;
+        opacity: 0.4;
+        z-index: 1;
+      }
+
+      .laser-beam-1 {
+        left: calc(80px * 4);
+        width: 2px;
+        height: 100%;
+        animation: laser-vertical 6s ease-in-out infinite;
+        animation-delay: 0s;
+      }
+
+      .laser-beam-1 .laser-dot {
+        left: -1.5px;
+        top: -10px;
+        animation: move-down 8s linear infinite;
+        animation-delay: 0s;
+      }
+
+      .laser-beam-1 .laser-tail {
+        left: -0.5px;
+        top: -50px;
+        width: 1.5px;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5));
+        animation: move-down 8s linear infinite;
+        animation-delay: 0s;
+        transform-origin: bottom center;
+      }
+
+      .laser-beam-2 {
+        left: calc(80px * 8);
+        width: 2px;
+        height: 100%;
+        animation: laser-vertical 8s ease-in-out infinite;
+        animation-delay: 2.5s;
+      }
+
+      .laser-beam-2 .laser-dot {
+        left: -1.5px;
+        top: -10px;
+        animation: move-down 8s linear infinite;
+        animation-delay: 2.5s;
+      }
+
+      .laser-beam-2 .laser-tail {
+        left: -0.5px;
+        top: -50px;
+        width: 1.5px;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5));
+        animation: move-down 8s linear infinite;
+        animation-delay: 2.5s;
+        transform-origin: bottom center;
+      }
+
+      .laser-beam-3 {
+        top: calc(80px * 3);
+        width: 100%;
+        height: 2px;
+        animation: laser-horizontal 8s ease-in-out infinite;
+        animation-delay: 4s;
+      }
+
+      .laser-beam-3 .laser-dot {
+        top: -1.5px;
+        left: -10px;
+        animation: move-right 8s linear infinite;
+        animation-delay: 4s;
+      }
+
+      .laser-beam-3 .laser-tail {
+        top: -0.5px;
+        left: -50px;
+        width: 40px;
+        height: 1.5px;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5));
+        animation: move-right 8s linear infinite;
+        animation-delay: 4s;
+        transform-origin: right center;
+      }
+
+      .laser-beam-4 {
+        top: calc(80px * 6);
+        width: 100%;
+        height: 2px;
+        animation: laser-horizontal 8s ease-in-out infinite;
+        animation-delay: 6.5s;
+      }
+
+      .laser-beam-4 .laser-dot {
+        top: -1.5px;
+        left: -10px;
+        animation: move-right 8s linear infinite;
+        animation-delay: 6.5s;
+      }
+
+      .laser-beam-4 .laser-tail {
+        top: -0.5px;
+        left: -50px;
+        width: 40px;
+        height: 1.5px;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5));
+        animation: move-right 8s linear infinite;
+        animation-delay: 6.5s;
+        transform-origin: right center;
+      }
+
+      @keyframes laser-vertical {
+        0%, 100% {
+          opacity: 0;
+        }
+        10%, 90% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes laser-horizontal {
+        0%, 100% {
+          opacity: 0;
+        }
+        10%, 90% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes move-down {
+        0% {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        3% {
+          opacity: 1;
+        }
+        97% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(calc(100vh + 50px));
+          opacity: 0;
+        }
+      }
+
+      @keyframes move-right {
+        0% {
+          transform: translateX(-50px);
+          opacity: 0;
+        }
+        3% {
+          opacity: 1;
+        }
+        97% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(calc(100vw + 50px));
+          opacity: 0;
+        }
+      }
+
+      .grid-cross line {
+        animation: cross-pulse 4s ease-in-out infinite;
+      }
+
+      .grid-cross:nth-child(1) line {
+        animation-delay: 0s;
+      }
+
+      .grid-cross:nth-child(2) line {
+        animation-delay: 0.5s;
+      }
+
+      .grid-cross:nth-child(3) line {
+        animation-delay: 1s;
+      }
+
+      .grid-cross:nth-child(4) line {
+        animation-delay: 1.5s;
+      }
+
+      .grid-cross:nth-child(5) line {
+        animation-delay: 2s;
+      }
+
+      .grid-cross:nth-child(6) line {
+        animation-delay: 2.5s;
+      }
+
+      .grid-cross:nth-child(7) line {
+        animation-delay: 3s;
+      }
+
+      .grid-cross:nth-child(8) line {
+        animation-delay: 0.2s;
+      }
+
+      .grid-cross:nth-child(9) line {
+        animation-delay: 1.2s;
+      }
+
+      .grid-cross:nth-child(10) line {
+        animation-delay: 2.2s;
+      }
+
+      .grid-cross:nth-child(11) line {
+        animation-delay: 0.7s;
+      }
+
+      .grid-cross:nth-child(12) line {
+        animation-delay: 1.7s;
+      }
+
+      @keyframes cross-pulse {
+        0%, 60% {
+          stroke: rgba(255,255,255,0.3);
+        }
+        70%, 100% {
+          stroke: #737373;
+        }
+      }
+
+    </style>
+
+  <!-- Fund Your Dream Steps Section -->
+  <!-- <FundYourDreamSteps client:load /> -->
+
+  <!-- Ambition Section -->
+  <section id="ambition-section" class="relative min-h-screen overflow-hidden">
+    {/* Night Background - flipped 180 degrees and horizontally */}
+    <div class="absolute inset-0">
+      <img src="/features/nightdarker.png" alt="" class="w-full h-full object-cover" style="transform: rotate(180deg) scaleX(-1);" />
+              </div>
+
+    <div class="relative w-full h-full min-h-screen flex items-center pt-32 pb-20 z-10">
+      <!-- Content -->
+      <div class="relative z-10 container mx-auto px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col gap-8 lg:gap-12 mt-8">
+          <!-- Main headline -->
+          <div class="w-full">
+            <h2 class="text-4xl md:text-5xl lg:text-[48px] font-opensauce font-semibold leading-tight text-white transition-colors duration-700 text-left lg:pl-6">
+              Where ambition becomes reality.
+            </h2>
+            </div>
+
+          <!-- Testimonial Cards -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto w-full">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl overflow-hidden flex flex-col">
+              <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
+                {/* Video placeholder - will be added later */}
+                <span class="text-neutral-400 text-sm">Video 1</span>
+                </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="text-neutral-900 text-lg mb-4 flex-1">
+                  "Testimonial quote will go here."
+                </p>
+                <div class="border-t border-neutral-200 pt-4 flex items-center justify-between">
+                  <div>
+                    <p class="text-neutral-900 font-semibold">Name</p>
+                    <p class="text-neutral-600 text-sm">Title</p>
+                </div>
+                  <div class="text-neutral-400 text-sm">Logo</div>
+              </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl overflow-hidden flex flex-col">
+              <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
+                {/* Video placeholder - will be added later */}
+                <span class="text-neutral-400 text-sm">Video 2</span>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="text-neutral-900 text-lg mb-4 flex-1">
+                  "Testimonial quote will go here."
+                </p>
+                <div class="border-t border-neutral-200 pt-4 flex items-center justify-between">
+                  <div>
+                    <p class="text-neutral-900 font-semibold">Name</p>
+                    <p class="text-neutral-600 text-sm">Title</p>
+          </div>
+                  <div class="text-neutral-400 text-sm">Logo</div>
+              </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl overflow-hidden flex flex-col">
+              <div class="aspect-[4/3] bg-neutral-100 flex items-center justify-center">
+                {/* Video placeholder - will be added later */}
+                <span class="text-neutral-400 text-sm">Video 3</span>
+              </div>
+              <div class="p-6 flex flex-col flex-1">
+                <p class="text-neutral-900 text-lg mb-4 flex-1">
+                  "Testimonial quote will go here."
+                </p>
+                <div class="border-t border-neutral-200 pt-4 flex items-center justify-between">
+                  <div>
+                    <p class="text-neutral-900 font-semibold">Name</p>
+                    <p class="text-neutral-600 text-sm">Title</p>
+            </div>
+                  <div class="text-neutral-400 text-sm">Logo</div>
+              </div>
+              </div>
+        </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </section>
+
+        <script>
+    // Scroll-based background switch from sky to night for both sections
+    const dynamicSection = document.getElementById('dynamic-section');
+    const dynamicNightBackground = document.getElementById('dynamic-night-background');
+    const dynamicSectionHeading = document.getElementById('section-heading');
+    const flexibleNightBackground = document.getElementById('flexible-night-background');
+    const fundingHeading = document.getElementById('funding-heading');
+    const flexibleFinancingSection = document.getElementById('flexible-financing-section');
+    const ambitionSection = document.getElementById('ambition-section');
+    const ambitionHeading = ambitionSection?.querySelector('h2');
+
+    // Update both sections' backgrounds when funding heading is reached
+    const updateDynamicSectionBackground = () => {
+      if (dynamicNightBackground && fundingHeading) {
+        const headingRect = fundingHeading.getBoundingClientRect();
+        
+        // Show night background earlier - when heading is still below viewport
+        const shouldShowNight = headingRect.top <= window.innerHeight * 0.8;
+        
+        dynamicNightBackground.style.opacity = shouldShowNight ? '1' : '0';
+      }
+    };
+
+    // Update flexible financing section background when heading is reached
+    const updateFlexibleFinancingBackground = () => {
+      if (flexibleNightBackground && fundingHeading) {
+        const headingRect = fundingHeading.getBoundingClientRect();
+        
+        // Show night background earlier - when heading is still below viewport
+        const shouldShowNight = headingRect.top <= window.innerHeight * 0.8;
+        
+        flexibleNightBackground.style.opacity = shouldShowNight ? '1' : '0';
+      }
+    };
+
+    // Update white background when scrolling to ambition section
+    // Disabled - section should stay dark
+    const updateWhiteBackground = () => {
+      // Keep section dark, no white overlay
+      if (ambitionSection) {
+        ambitionSection.classList.remove('white-mode');
+      }
+      
+      // Keep text white
+      if (ambitionHeading) {
+        ambitionHeading.classList.remove('text-neutral-900');
+        ambitionHeading.classList.add('text-white');
+      }
+    };
+
+    let ticking = false;
+    const requestUpdate = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateDynamicSectionBackground();
+          updateFlexibleFinancingBackground();
+          updateWhiteBackground();
+          ticking = false;
+        });
+      }
+    };
+
+    window.addEventListener('scroll', requestUpdate);
+    window.addEventListener('resize', requestUpdate);
+    updateDynamicSectionBackground();
+    updateFlexibleFinancingBackground();
+    updateWhiteBackground();
+        </script>
+
+        <style>
+    .grid-laser-beam {
+      position: absolute;
+    }
+
+    .grid-laser-dot {
+      width: 3px;
+      height: 3px;
+      background: #4C6AF6;
+      border-radius: 50%;
+      position: absolute;
+      box-shadow: 0 0 4px rgba(76, 106, 246, 0.5), 0 0 6px rgba(76, 106, 246, 0.3);
+      z-index: 2;
+      opacity: 0.7;
+    }
+
+    .grid-laser-tail {
+      position: absolute;
+      opacity: 0.4;
+      z-index: 1;
+    }
+
+    .grid-laser-beam-1 {
+      left: calc(80px * 2);
+      width: 2px;
+      height: 100%;
+      animation: grid-laser-vertical 6s ease-in-out infinite;
+      animation-delay: 0s;
+    }
+
+    .grid-laser-beam-1 .grid-laser-dot {
+      left: -1.5px;
+      top: -10px;
+      animation: grid-move-down 8s linear infinite;
+      animation-delay: 0s;
+    }
+
+    .grid-laser-beam-1 .grid-laser-tail {
+      left: -0.5px;
+      top: -50px;
+      width: 1.5px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(76, 106, 246, 0.5));
+      animation: grid-move-down 8s linear infinite;
+      animation-delay: 0s;
+      transform-origin: bottom center;
+    }
+
+    .grid-laser-beam-2 {
+      left: calc(80px * 4);
+      width: 2px;
+      height: 100%;
+      animation: grid-laser-vertical 8s ease-in-out infinite;
+      animation-delay: 2.5s;
+    }
+
+    .grid-laser-beam-2 .grid-laser-dot {
+      left: -1.5px;
+      top: -10px;
+      animation: grid-move-down 8s linear infinite;
+      animation-delay: 2.5s;
+    }
+
+    .grid-laser-beam-2 .grid-laser-tail {
+      left: -0.5px;
+      top: -50px;
+      width: 1.5px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(76, 106, 246, 0.5));
+      animation: grid-move-down 8s linear infinite;
+      animation-delay: 2.5s;
+      transform-origin: bottom center;
+    }
+
+    .grid-laser-beam-3 {
+      top: calc(80px * 2);
+      width: 50%;
+      height: 2px;
+      animation: grid-laser-horizontal 8s ease-in-out infinite;
+      animation-delay: 4s;
+    }
+
+    .grid-laser-beam-3 .grid-laser-dot {
+      top: -1.5px;
+      left: -10px;
+      animation: grid-move-right 8s linear infinite;
+      animation-delay: 4s;
+    }
+
+    .grid-laser-beam-3 .grid-laser-tail {
+      top: -0.5px;
+      left: -50px;
+      width: 40px;
+      height: 1.5px;
+      background: linear-gradient(to right, transparent, rgba(76, 106, 246, 0.5));
+      animation: grid-move-right 8s linear infinite;
+      animation-delay: 4s;
+      transform-origin: right center;
+    }
+
+    .grid-laser-beam-4 {
+      top: calc(80px * 5);
+      width: 50%;
+      height: 2px;
+      animation: grid-laser-horizontal 8s ease-in-out infinite;
+      animation-delay: 6.5s;
+    }
+
+    .grid-laser-beam-4 .grid-laser-dot {
+      top: -1.5px;
+      left: -10px;
+      animation: grid-move-right 8s linear infinite;
+      animation-delay: 6.5s;
+    }
+
+    .grid-laser-beam-4 .grid-laser-tail {
+      top: -0.5px;
+      left: -50px;
+      width: 40px;
+      height: 1.5px;
+      background: linear-gradient(to right, transparent, rgba(76, 106, 246, 0.5));
+      animation: grid-move-right 8s linear infinite;
+      animation-delay: 6.5s;
+      transform-origin: right center;
+    }
+
+    @keyframes grid-laser-vertical {
+      0%, 100% {
+        opacity: 0;
+      }
+      10%, 90% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes grid-laser-horizontal {
+      0%, 100% {
+        opacity: 0;
+      }
+      10%, 90% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes grid-move-down {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      3% {
+        opacity: 1;
+      }
+      97% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(calc(100vh + 50px));
+        opacity: 0;
+      }
+    }
+
+    @keyframes grid-move-right {
+      0% {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      3% {
+        opacity: 1;
+      }
+      97% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(calc(50vw + 50px));
+        opacity: 0;
+      }
+    }
+
+    .grid-cross line {
+      animation: grid-cross-pulse 4s ease-in-out infinite;
+    }
+
+    .grid-cross:nth-child(1) line {
+      animation-delay: 0s;
+    }
+
+    .grid-cross:nth-child(2) line {
+      animation-delay: 0.5s;
+    }
+
+    .grid-cross:nth-child(3) line {
+      animation-delay: 1s;
+    }
+
+    .grid-cross:nth-child(4) line {
+      animation-delay: 1.5s;
+    }
+
+    .grid-cross:nth-child(5) line {
+      animation-delay: 2s;
+    }
+
+    @keyframes grid-cross-pulse {
+      0%, 60% {
+        stroke: #737373;
+      }
+      70%, 100% {
+        stroke: #4C6AF6;
+      }
+    }
+
+        </style>
+
+        <script>
+          (function() {
+      const section = document.getElementById('dynamic-section');
+      if (!section) return;
+
+      const checkPosition = () => {
+        const rect = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const viewportCenter = viewportHeight / 2;
+        
+        // Check if section center is near viewport center
+        const sectionCenter = rect.top + (rect.height / 2);
+        const distanceFromCenter = Math.abs(sectionCenter - viewportCenter);
+        const isInMiddle = distanceFromCenter < viewportHeight * 0.3; // Within 30% of viewport height from center
+        
+        // Keep section light
+        const bgColor = '#F9F9F7';
+        section.style.backgroundColor = bgColor;
+        
+        // Update fade overlay colors
+        const fadeOverlays = section.querySelectorAll('.fade-overlay');
+        fadeOverlays.forEach((overlay: HTMLElement) => {
+          if (overlay.classList.contains('fade-top')) {
+            overlay.style.background = `linear-gradient(to bottom, ${bgColor}, transparent)`;
+          } else if (overlay.classList.contains('fade-right')) {
+            overlay.style.background = `linear-gradient(to right, transparent, ${bgColor})`;
+          } else if (overlay.classList.contains('fade-bottom')) {
+            overlay.style.background = `linear-gradient(to bottom, transparent, ${bgColor})`;
+          }
+        });
+        
+        // Dispatch event to turn FundYourDreamSteps section light
+        window.dispatchEvent(new CustomEvent('capital-now-visible', { detail: isInMiddle }));
+      };
+
+      let ticking = false;
+      const handleScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            checkPosition();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+
+      checkPosition(); // Initial check
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('resize', handleScroll);
+          })();
+        </script>
+
+  <!-- Testimonials Section -->
+  <!-- moved below About Section -->
+
+
+
+
+
+  <!-- Testimonials Section -->
+  <section class="hidden">
+    <TestimonialsMarquee client:load />
+  </section>
+
+  <!-- Services Preview and related sections - Hidden for now -->
+  <div style="display: none !important;">
+  <section class="py-12 md:py-16" style="background-color: #0D0E13;">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto space-y-6">
+        <div class="space-y-3 text-left">
+          <h2 class="text-h4 text-white font-opensauce font-light">
+            Financing for every stage
+          </h2>
+          <p class="text-lg md:text-xl text-white/70 font-opensauce max-w-3xl">
+            Choose the funding that fits your business needs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Working Capital Finance -->
+          <a href="/services" class="group relative block w-full h-full rounded-lg border border-white/20 p-5 min-h-[250px] transition-all duration-300 hover:border-white/40 overflow-hidden" style="background-image: url('/features/yellowsticky.png'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-[#15161B]/60 z-0"></div>
+            <div class="relative z-10 h-full flex flex-col gap-2">
+              <div class="w-[48px] h-[48px] rounded-lg border border-white/20 flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-lime-200 icon-draw">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <h3 class="text-h5 text-white">
+                Working Capital Finance
+              </h3>
+              <p class="card-subtext mt-auto pt-1 text-white/70">
+                Access funds to cover daily operations, manage cash flow, and keep your business running smoothly.
+              </p>
+            </div>
+          </a>
+
+          <!-- Asset Finance -->
+          <a href="/services" class="group block w-full h-full rounded-lg border border-white/20 p-5 min-h-[250px] transition-all duration-300 hover:border-white/40" style="background-color: #15161B;">
+            <div class="h-full flex flex-col gap-2">
+              <div class="w-[48px] h-[48px] rounded-lg border border-white/20 flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-lime-200 icon-draw">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M9 9h6v6H9z" />
+                </svg>
+              </div>
+              <h3 class="text-h5 text-white">
+                Asset Finance
+              </h3>
+              <p class="card-subtext mt-auto pt-1 text-white/70">
+                Finance machinery, vehicles, and technology to grow your business without large upfront costs.
+              </p>
+            </div>
+          </a>
+
+          <!-- Invoice Financing -->
+          <a href="/services" class="group block w-full h-full rounded-lg border border-white/20 p-5 min-h-[250px] transition-all duration-300 hover:border-white/40" style="background-color: #15161B;">
+            <div class="h-full flex flex-col gap-2">
+              <div class="w-[48px] h-[48px] rounded-lg border border-white/20 flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-lime-200 icon-draw">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+              </div>
+              <h3 class="text-h5 text-white">
+                Invoice Financing
+              </h3>
+              <p class="card-subtext mt-auto pt-1 text-white/70">
+                Get paid immediately on outstanding invoices instead of waiting for customer payments.
+              </p>
+            </div>
+          </a>
+
+          <!-- Growth & Acquisition Loans -->
+          <a href="/services" class="group block w-full h-full rounded-lg border border-white/20 p-5 min-h-[250px] transition-all duration-300 hover:border-white/40" style="background-color: #15161B;">
+            <div class="h-full flex flex-col gap-2">
+              <div class="w-[48px] h-[48px] rounded-lg border border-white/20 flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-lime-200 icon-draw">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+              </div>
+              <h3 class="text-h5 text-white">
+                Growth & Acquisition Loans
+              </h3>
+              <p class="card-subtext mt-auto pt-1 text-white/70">
+                Fund expansion plans, acquisitions, or strategic investments to scale your business.
+              </p>
+            </div>
+          </a>
+
+          <!-- Revolving Credit Lines -->
+          <a href="/services" class="group block w-full h-full rounded-lg border border-white/20 p-5 min-h-[250px] transition-all duration-300 hover:border-white/40" style="background-color: #15161B;">
+            <div class="h-full flex flex-col gap-2">
+              <div class="w-[48px] h-[48px] rounded-lg border border-white/20 flex items-center justify-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-lime-200 icon-draw">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <h3 class="text-h5 text-white">
+                Revolving Credit Lines
+              </h3>
+              <p class="card-subtext mt-auto pt-1 text-white/70">
+                Flexible access to funds that you can draw from and repay as needed for ongoing operations.
+              </p>
+            </div>
+          </a>
+
+          <!-- View All Financing Solutions Card -->
+          <a href="/business-loans" class="group block w-full rounded-lg border border-white/20 p-5 transition-all duration-300 hover:border-white/40 relative overflow-hidden min-h-[250px] flex items-center justify-center" style="background-color: #15161B;">
+            <div class="flex items-center gap-3">
+              <span class="text-white font-heading text-lg md:text-xl">View all financing products</span>
+              <div class="w-8 h-8 rounded-full bg-neutral-700 flex items-center justify-center transition-all duration-300 group-hover:bg-lime-200 group-hover:translate-x-1 group-hover:-translate-y-1">
+                <svg class="w-5 h-5 text-lime-200 transition-colors duration-300 group-hover:text-black" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="13 7 17 7 17 11" />
+                  </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .icon-draw path,
+    .icon-draw polyline,
+    .icon-draw line,
+    .icon-draw rect {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw 8s ease-in-out infinite;
+    }
+
+    .icon-draw path:nth-child(2),
+    .icon-draw polyline:nth-child(2),
+    .icon-draw line:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .icon-draw path:nth-child(3),
+    .icon-draw polyline:nth-child(3),
+    .icon-draw line:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes draw {
+      0% {
+        stroke-dashoffset: 1000;
+      }
+      50% {
+        stroke-dashoffset: 0;
+      }
+      100% {
+        stroke-dashoffset: 1000;
+      }
+    }
+
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 20s linear infinite;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes pulse-slow {
+      0%, 100% {
+        opacity: 0.4;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    .animate-pulse-slow {
+      animation: pulse-slow 3s ease-in-out infinite;
+    }
+
+    /* Geometric shapes animation */
+    .geometric-shape {
+      opacity: 0;
+      animation: geometric-fade-in 1.5s ease-out forwards;
+    }
+
+    @keyframes geometric-fade-in {
+      from {
+        opacity: 0;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+      }
+      to {
+        opacity: 1;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+      }
+    }
+
+    .geometric-shape[fill] {
+      animation: geometric-dot-fade 1.5s ease-out forwards;
+    }
+
+    @keyframes geometric-dot-fade {
+      from {
+        opacity: 0;
+        transform: scale(0);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Financing types scroll animation */
+    .financing-scroll-container {
+      animation: scroll-up 20s linear infinite;
+    }
+
+    @keyframes scroll-up {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+
+    .text-h4 {
+      font-size: 1.65rem;
+      font-family: var(--font-opensauce), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.8px;
+    }
+
+    @media (min-width: 768px) {
+      .text-h4 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .text-h4 {
+        font-size: 3.5rem;
+      }
+    }
+
+    .text-h5,
+    .post-article h2 {
+      font-size: 1.44375rem;
+      font-family: var(--font-opensauce), '__opensauce_39fbf1', '__opensauce_Fallback_39fbf1', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.64px;
+    }
+
+    .card-subtext {
+      font-size: 1rem;
+      font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      line-height: 1.5;
+    }
+
+    .font-opensauce {
+      font-family: var(--font-opensauce), '__opensauce_39fbf1', '__opensauce_Fallback_39fbf1', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    #dynamic-section.white-mode .funding-card {
+      border-color: rgba(15, 23, 42, 0.15);
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #0f172a;
+      box-shadow: 0 25px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    #dynamic-section.white-mode .funding-card .card-eyebrow {
+      color: #64748b;
+    }
+
+    #dynamic-section.white-mode .funding-card .card-title {
+      color: #0f172a;
+    }
+
+    #dynamic-section.white-mode .funding-card .card-body {
+      color: #334155;
+    }
+  </style>
+
+    <section class="py-12 md:py-16 bg-[#F7F6F1]">
+      <div class="container mx-auto px-6 lg:px-8 w-full">
+        <div class="max-w-5xl mx-auto space-y-14">
+          <div class="text-center max-w-3xl mx-auto space-y-4">
+            <h2 class="text-h4 font-opensauce font-light text-black leading-tight">
+              Estimate your monthly repayments
+            </h2>
+            <p class="text-base text-neutral-600 font-opensauce mb-[32px]">
+              Results are for guidance only. Final rates depend on your business and the lender’s assessment.
+        </p>
+      </div>
+                <DashboardCalculator client:load />
+      </div>
+    </div>
+  </section>
+  </div>
+
+
+  <!-- iPad Calculator Section -->
+
+ 
+
+  <section id="sunglasses-transition" class="relative">
+    <div
+      id="floating-sunglasses-wrapper"
+      class="pointer-events-none absolute left-1/2 -translate-x-1/2 z-20"
+    >
+      <img id="floating-sunglasses" src="/features/sunglasses.png" alt="" class="w-auto max-w-[420px]" />
+        </div>
+
+    <section
+      id="sunglasses-white-section"
+      class="bg-white min-h-[50vh] flex flex-col items-center justify-center text-center px-6 py-16 gap-8 relative z-10"
+    >
+      <h2 class="text-4xl md:text-5xl lg:text-[48px] font-opensauce font-semibold leading-tight text-neutral-900">
+        When the sky is the limit,
+        <span class="block mt-1">your bank shouldn't be the ceiling.</span>
+          </h2>
+  </section>
+
+    <section id="sunglasses-sky-section" class="relative min-h-screen overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="/features/newdarker.png" alt="" class="w-full h-full object-cover" />
+          </div>
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 18%, rgba(255,255,255,0) 40%);"
+      ></div>
+      <div
+        class="absolute inset-0 grid-background pointer-events-none"
+        style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.03) 20%, rgba(0,0,0,0.03) 80%, rgba(0,0,0,0) 100%), repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.1) 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.1) 80px); background-size: 100% 100%, 80px 80px, 80px 80px;"
+      ></div>
+
+      <div id="sunglasses-target" class="absolute left-1/2 top-[55%] h-2 w-2 -translate-x-1/2"></div>
+
+      <div id="sunglasses-final-cta" class="absolute left-1/2 top-[72%] -translate-x-1/2 opacity-0 transition-opacity duration-500 z-20">
+        <a
+          href="/apply"
+          class="inline-flex items-center justify-center rounded-full bg-white text-black px-8 py-3 font-opensauce font-semibold shadow-lg hover:bg-white/90 transition"
+        >
+          Apply for funding now
+          </a>
+        </div>
+
+    <div class="absolute bottom-0 inset-x-0 flex justify-center pointer-events-none z-10">
+        <img src="/features/personglasses.png" alt="" class="w-auto max-w-[520px] drop-shadow-2xl" />
+    </div>
+    </section>
+  </section>
+
+  <!-- spacing placeholder removed -->
+
+  <!-- Rich Footer -->
+
+  <script>
+    const transitionWrapper = document.getElementById('sunglasses-transition');
+    const floatingWrapper = document.getElementById('floating-sunglasses-wrapper');
+    const floatingImage = document.getElementById('floating-sunglasses');
+    const whiteSection = document.getElementById('sunglasses-white-section');
+    const skySection = document.getElementById('sunglasses-sky-section');
+    const target = document.getElementById('sunglasses-target');
+    const finalCta = document.getElementById('sunglasses-final-cta');
+
+    if (transitionWrapper && floatingWrapper && floatingImage && whiteSection && skySection && target && finalCta) {
+      const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+      let ticking = false;
+
+      const updateSunglasses = () => {
+        const wrapperTop = transitionWrapper.offsetTop;
+        const scrollCenter = window.scrollY + window.innerHeight / 2 - wrapperTop;
+        const initialCenter = whiteSection.offsetTop + whiteSection.offsetHeight - 60;
+        const targetCenter = skySection.offsetTop + target.offsetTop + target.offsetHeight / 2;
+        const distance = Math.max(targetCenter - initialCenter, 1);
+        const progress = clamp((scrollCenter - initialCenter) / distance, 0, 1);
+        const currentCenter = initialCenter + distance * progress;
+        const imageHeight = floatingImage.offsetHeight;
+
+        floatingWrapper.style.top = `${currentCenter - imageHeight / 2}px`;
+        floatingImage.style.transform = `scale(${1 - 0.65 * progress})`;
+        const showFinalCta = progress >= 0.98;
+        finalCta.style.opacity = showFinalCta ? '1' : '0';
+        finalCta.style.pointerEvents = showFinalCta ? 'auto' : 'none';
+
+        ticking = false;
+      };
+
+      const requestUpdate = () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateSunglasses);
+        }
+      };
+
+      window.addEventListener('scroll', requestUpdate);
+      window.addEventListener('resize', requestUpdate);
+      requestUpdate();
+    }
+  </script>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-black text-white">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-opensauce font-semibold leading-tight text-white">
+            Frequently Asked Questions
+          </h2>
+        </div>
+        <FAQAccordion client:load />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

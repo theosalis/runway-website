@@ -1,0 +1,463 @@
+---
+import LoanProductLayout from "@/layouts/LoanProductLayout.astro";
+const title = "Asset Finance";
+const subtitle = "Fund vehicles, equipment and machinery. Spread the cost of essential assets with flexible financing options. Compare hire purchase, finance lease, and operating lease options from multiple lenders.";
+---
+<LoanProductLayout title={title} subtitle={subtitle} updatedAt="November 2025">
+  
+  <!-- What is asset finance -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-6">What is asset finance?</h2>
+    <p class="text-lg text-neutral-700 leading-relaxed mb-4">
+      Asset finance is a form of business funding used to acquire or refinance physical assets such as vehicles, plant, machinery, IT and other equipment. You either lease or hire purchase the asset, paying over an agreed term with fixed or variable repayments.
+    </p>
+    <p class="text-lg text-neutral-700 leading-relaxed">
+      Common structures include hire purchase, finance lease, operating lease and asset refinance. The right choice depends on whether you want ownership, balance sheet treatment and the level of flexibility you require.
+    </p>
+  </div>
+
+  <!-- How it works -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-6">How does asset finance work?</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-lg bg-lime-100 flex items-center justify-center">
+            <span class="text-lime-900 font-semibold">1</span>
+          </div>
+          <h3 class="font-semibold text-black text-lg">Choose the asset</h3>
+        </div>
+        <p class="text-neutral-700">Choose the asset and agree the purchase price with a supplier.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-lg bg-lime-100 flex items-center justify-center">
+            <span class="text-lime-900 font-semibold">2</span>
+          </div>
+          <h3 class="font-semibold text-black text-lg">Enter agreement</h3>
+        </div>
+        <p class="text-neutral-700">A lender funds the asset and you enter a lease or hire purchase agreement.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-lg bg-lime-100 flex items-center justify-center">
+            <span class="text-lime-900 font-semibold">3</span>
+          </div>
+          <h3 class="font-semibold text-black text-lg">Make repayments</h3>
+        </div>
+        <p class="text-neutral-700">You pay a deposit if required, then regular repayments over the term.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-lg bg-lime-100 flex items-center justify-center">
+            <span class="text-lime-900 font-semibold">4</span>
+          </div>
+          <h3 class="font-semibold text-black text-lg">End of term options</h3>
+        </div>
+        <p class="text-neutral-700">At the end of the term you either own the asset, return it, upgrade it or refinance it depending on product type.</p>
+      </div>
+    </div>
+    <p class="mt-6 text-lg text-neutral-700 leading-relaxed">
+      This can preserve cash flow, align payments with the useful life of the asset and help you invest without a large initial outlay.
+    </p>
+  </div>
+
+  <!-- Types of asset finance -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-8">Types of asset finance</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white hover:border-lime-300 transition-colors">
+        <h3 class="font-semibold text-black mb-2">Hire purchase</h3>
+        <p class="text-neutral-700 text-sm mb-3">Spread the cost and gain ownership at the end, often after a nominal option to purchase fee. Suited to assets you plan to keep long term.</p>
+        <a href="/loans/hire-purchase" class="text-sm text-lime-900 font-medium hover:underline">Learn more about hire purchase →</a>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white hover:border-lime-300 transition-colors">
+        <h3 class="font-semibold text-black mb-2">Finance lease</h3>
+        <p class="text-neutral-700 text-sm mb-3">You rent the asset for most of its useful life. At the end, you can continue leasing, sell on behalf of the lessor or upgrade. Ownership stays with the lender.</p>
+        <a href="/loans/finance-lease" class="text-sm text-lime-900 font-medium hover:underline">Learn more about finance lease →</a>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white hover:border-lime-300 transition-colors">
+        <h3 class="font-semibold text-black mb-2">Operating lease</h3>
+        <p class="text-neutral-700 text-sm mb-3">Shorter than a finance lease with lower rentals because the lessor expects residual value. Often includes maintenance and upgrade options.</p>
+        <a href="/loans/operating-lease" class="text-sm text-lime-900 font-medium hover:underline">Learn more about operating lease →</a>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white hover:border-lime-300 transition-colors">
+        <h3 class="font-semibold text-black mb-2">Asset refinance and sale and leaseback</h3>
+        <p class="text-neutral-700 text-sm mb-3">Release equity tied up in assets you already own. The lender refinances the asset and you repay over time.</p>
+        <a href="/loans/asset-refinance" class="text-sm text-lime-900 font-medium hover:underline">Learn more about asset refinance →</a>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white hover:border-lime-300 transition-colors">
+        <h3 class="font-semibold text-black mb-2">Vehicle and asset finance</h3>
+        <p class="text-neutral-700 text-sm">Specialist facilities for cars, vans, HGVs, yellow plant, manufacturing lines, medical and IT equipment.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Is it right for your business -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-8">Is asset finance right for your business?</h2>
+    
+    <div class="p-6 rounded-xl border border-neutral-200 bg-zinc-50 mb-6">
+      <h3 class="font-semibold text-black mb-4">Asset finance is suitable for:</h3>
+      <ul class="space-y-2">
+        <li class="flex items-start gap-3">
+          <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+          <span class="text-neutral-700">Limited companies, sole traders, and partnerships</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+          <span class="text-neutral-700">Businesses needing vehicles, equipment, or plant</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+          <span class="text-neutral-700">Companies with regular cash flow or trading history</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+          <span class="text-neutral-700">Those seeking to preserve cash for day-to-day operations</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+      <p class="text-neutral-700">
+        It may not be suitable if you have poor credit or operate in sectors with volatile cash flow and asset depreciation.
+      </p>
+    </div>
+  </div>
+
+  <!-- Asset finance vs business loan -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-8">Asset finance vs business loan</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="border-b border-neutral-200">
+            <th class="text-left py-4 px-4 font-semibold text-black">Feature</th>
+            <th class="text-left py-4 px-4 font-semibold text-black">Asset finance</th>
+            <th class="text-left py-4 px-4 font-semibold text-black">Business loan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-neutral-100">
+            <td class="py-4 px-4 text-neutral-700">Use of funds</td>
+            <td class="py-4 px-4 text-neutral-700">Tied to specific asset</td>
+            <td class="py-4 px-4 text-neutral-700">Flexible</td>
+          </tr>
+          <tr class="border-b border-neutral-100">
+            <td class="py-4 px-4 text-neutral-700">Ownership</td>
+            <td class="py-4 px-4 text-neutral-700">May or may not own</td>
+            <td class="py-4 px-4 text-neutral-700">Not linked to an asset</td>
+          </tr>
+          <tr class="border-b border-neutral-100">
+            <td class="py-4 px-4 text-neutral-700">Collateral</td>
+            <td class="py-4 px-4 text-neutral-700">Asset-secured</td>
+            <td class="py-4 px-4 text-neutral-700">May require personal guarantee</td>
+          </tr>
+          <tr class="border-b border-neutral-100">
+            <td class="py-4 px-4 text-neutral-700">Repayments</td>
+            <td class="py-4 px-4 text-neutral-700">Fixed, tied to asset</td>
+            <td class="py-4 px-4 text-neutral-700">Fixed</td>
+          </tr>
+          <tr>
+            <td class="py-4 px-4 text-neutral-700">Suitable for</td>
+            <td class="py-4 px-4 text-neutral-700">Vehicles, machinery</td>
+            <td class="py-4 px-4 text-neutral-700">Working capital, marketing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- What lenders look for -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-6">What lenders look for</h2>
+    <p class="text-lg text-neutral-700 leading-relaxed mb-4">
+      Lenders typically assess:
+    </p>
+    <ul class="space-y-3 mb-6">
+      <li class="flex items-start gap-3">
+        <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        </div>
+        <span class="text-neutral-700">Credit history and financial health</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        </div>
+        <span class="text-neutral-700">Business trading history</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        </div>
+        <span class="text-neutral-700">Value and type of asset</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        </div>
+        <span class="text-neutral-700">Purpose of use</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        </div>
+        <span class="text-neutral-700">Deposit or residual value (if applicable)</span>
+      </li>
+    </ul>
+    <p class="text-neutral-700">
+      Providing up-to-date accounts and accurate asset details can help speed up approval and secure better rates.
+    </p>
+  </div>
+
+  <!-- What assets can I finance -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-6">What assets can I finance?</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Vehicles</h3>
+        <p class="text-neutral-700 text-sm">Cars, vans, HGVs, specialist commercial vehicles</p>
+      </div>
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Plant and machinery</h3>
+        <p class="text-neutral-700 text-sm">Excavators, forklifts, CNC, presses</p>
+      </div>
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Technology</h3>
+        <p class="text-neutral-700 text-sm">Servers, laptops, telecoms, POS</p>
+      </div>
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Specialist equipment</h3>
+        <p class="text-neutral-700 text-sm">Medical equipment, catering, print, renewables</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Costs and rates -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-6">Costs and rates</h2>
+    <p class="text-lg text-neutral-700 leading-relaxed mb-4">
+      Repayments depend on asset type, term, deposit, residual value and your credit profile. Costs usually include:
+    </p>
+    <ul class="space-y-3 mb-6">
+      <li class="flex items-start gap-3">
+        <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        </div>
+        <span class="text-neutral-700">Interest or rental charge</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        </div>
+        <span class="text-neutral-700">Arrangement or documentation fee</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        </div>
+        <span class="text-neutral-700">Option to purchase fee for hire purchase</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+          <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        </div>
+        <span class="text-neutral-700">Maintenance or excess usage charges on some leases</span>
+      </li>
+    </ul>
+    <p class="text-neutral-700 font-medium">
+      Ask for an itemised quote and compare total amount payable, not just the monthly price.
+    </p>
+  </div>
+
+  <!-- Pros and cons -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-8">Pros and cons of asset finance</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-4">Pros</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">Preserve cash flow with predictable repayments</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">Unlock access to essential assets quickly</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">Potential tax and accounting benefits</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">Match payments to asset life and usage</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-lime-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-lime-900" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">Option to upgrade or replace at term end</span>
+          </li>
+        </ul>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-4">Cons</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-neutral-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-neutral-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">Interest and fees increase total cost vs cash</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-neutral-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-neutral-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">Early termination or mileage limits can apply</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-neutral-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-neutral-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">You may not own the asset with leases</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-neutral-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-neutral-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">Deposit or documentation fees may be required</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-5 h-5 rounded bg-neutral-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-3 h-3 text-neutral-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </div>
+            <span class="text-neutral-700">Asset can be repossessed if payments are missed</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alternatives -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-8">Alternatives to asset finance</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">For broader working capital</h3>
+        <p class="text-neutral-700 text-sm">Business loans can provide a lump sum to support day-to-day operations or larger growth plans.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Flexible access to funds as needed</h3>
+        <p class="text-neutral-700 text-sm">Revolving credit facility lets you draw down as needed, only paying interest on what you use.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">For assets needed short-term</h3>
+        <p class="text-neutral-700 text-sm">Asset leasing helps you get the assets you need without the upfront cost of ownership.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Release funds tied up in unpaid invoices</h3>
+        <p class="text-neutral-700 text-sm">Invoice finance allows you to release working capital without waiting for clients to pay.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Based on card revenue</h3>
+        <p class="text-neutral-700 text-sm">Merchant cash advance gives you a flexible repayment model tied to your revenue.</p>
+      </div>
+      <div class="p-5 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Specifically tailored for vehicles</h3>
+        <p class="text-neutral-700 text-sm">Commercial vehicle finance is tailored for vans, HGVs, or fleet upgrades.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- How Runway works -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-8">How does Runway work?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white text-center">
+        <div class="w-12 h-12 rounded-full bg-lime-100 flex items-center justify-center mx-auto mb-4">
+          <span class="text-lime-900 font-semibold text-xl">1</span>
+        </div>
+        <h3 class="font-semibold text-black mb-2">Tell us how much you need</h3>
+        <p class="text-neutral-700 text-sm">We'll ask a few questions about your business and the reason for your loan.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white text-center">
+        <div class="w-12 h-12 rounded-full bg-lime-100 flex items-center justify-center mx-auto mb-4">
+          <span class="text-lime-900 font-semibold text-xl">2</span>
+        </div>
+        <h3 class="font-semibold text-black mb-2">Get quotes instantly</h3>
+        <p class="text-neutral-700 text-sm">Our smart technology will compare quotes from multiple lenders to help you find the ideal business loan.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white text-center">
+        <div class="w-12 h-12 rounded-full bg-lime-100 flex items-center justify-center mx-auto mb-4">
+          <span class="text-lime-900 font-semibold text-xl">3</span>
+        </div>
+        <h3 class="font-semibold text-black mb-2">Apply for a Business Loan</h3>
+        <p class="text-neutral-700 text-sm">We'll be there to guide you through every step of the process.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="mb-16">
+    <h2 class="font-heading font-light text-3xl md:text-4xl text-black mb-8">Frequently asked questions</h2>
+    <div class="space-y-4">
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">What is the difference between hire purchase and finance lease?</h3>
+        <p class="text-neutral-700">Hire purchase leads to ownership at the end after a small option to purchase fee. A finance lease is a long term rental where you do not own the asset and usually continue leasing, upgrade or sell on behalf of the lessor.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">How much deposit do I need for asset finance?</h3>
+        <p class="text-neutral-700">Many lenders accept deposits from 0 to 20 percent depending on credit profile, asset type and term. A higher deposit can lower monthly repayments.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Can I claim tax relief on asset finance?</h3>
+        <p class="text-neutral-700">Tax treatment depends on the product and your circumstances. Businesses may be able to claim capital allowances on hire purchase or deduct lease rentals as an expense. Seek independent tax advice.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">How quickly can I get asset finance approved?</h3>
+        <p class="text-neutral-700">Simple proposals can be approved rapidly once documents are provided. Complex or high value assets may take longer due to underwriting and valuations.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">Can I finance used assets?</h3>
+        <p class="text-neutral-700">Yes, many lenders fund used assets if condition, age and resale value meet criteria. Rates and terms may differ from new assets.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-neutral-200 bg-white">
+        <h3 class="font-semibold text-black mb-2">What happens at the end of the term?</h3>
+        <p class="text-neutral-700">Hire purchase - you usually pay a small fee and take ownership. Finance lease - continue leasing, upgrade or arrange a sale and share proceeds per your agreement. Operating lease - return or upgrade the asset.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="p-6 rounded-xl border border-neutral-200 bg-zinc-50">
+    <p class="text-sm text-neutral-700 mb-4">
+      <strong class="text-black">Important:</strong> Please note that the information above is not intended to be financial advice. You should seek independent financial advice before making any decisions about your financial future.
+    </p>
+    <p class="text-sm text-neutral-700 mb-4">
+      It's important to remember that all loans and credit agreements come with risks. These risks include non-payment and late-payment of the agreed repayment plan, which could affect your business credit score and impact your ability to find future funding. Always read the terms and conditions of every loan or credit agreement before you proceed.
+    </p>
+    <p class="text-sm text-neutral-700">
+      Runway helps businesses access business finance, working directly with businesses and their trusted advisors. Runway is a credit broker and does not provide loans directly. All finance and quotes are subject to status and income. Applicants must be aged 18 and over and terms and conditions apply.
+    </p>
+  </div>
+
+</LoanProductLayout>

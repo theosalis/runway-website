@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Button } from '@/components/ui/button';
+---
+
+<BaseLayout title="Page Not Found — Runway">
+  <section class="section-padding pt-32">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center space-y-8">
+        <div class="text-[140px] font-bold text-muted-foreground/20 leading-none">404</div>
+        <h1 class="text-4xl md:text-5xl">Page not found</h1>
+        <p class="text-xl text-muted-foreground">
+          Sorry, we couldn't find the page you're looking for.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+          <Button size="lg" asChild>
+            <a href="/">Go home</a>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <a href="/contact">Contact support</a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

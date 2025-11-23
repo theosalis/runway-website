@@ -1,0 +1,23 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ApplyForm from '@/components/ApplyForm';
+---
+
+<BaseLayout title="Apply — Runway">
+  <section class="section-padding pt-32">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-16">
+          <h1 class="mb-6">
+            Apply for funding
+          </h1>
+          <p class="text-xl text-muted-foreground leading-relaxed">
+            Complete this application to get started. Takes about 5 minutes.
+          </p>
+        </div>
+
+        <ApplyForm client:load />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

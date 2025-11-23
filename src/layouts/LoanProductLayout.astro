@@ -1,0 +1,75 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import DashboardCalculator from "@/components/DashboardCalculator";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  updatedAt?: string;
+}
+
+const { title, subtitle = "", updatedAt } = Astro.props as Props;
+---
+<BaseLayout title={title}>
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-heading font-light text-5xl md:text-6xl lg:text-[72px] leading-tight text-black mb-6">
+          {title}
+        </h1>
+        {subtitle && (
+          <p class="text-xl md:text-2xl text-neutral-700 max-w-3xl mx-auto mb-8">
+            {subtitle}
+          </p>
+        )}
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="/apply" class="inline-flex items-center justify-center rounded-lg bg-black text-white px-8 py-4 font-medium hover:bg-black/90 transition-colors">
+            Apply for funding
+          </a>
+          <a href="#calculator" class="inline-flex items-center justify-center rounded-lg border border-neutral-300 bg-white text-black px-8 py-4 font-medium hover:bg-neutral-50 transition-colors">
+            Estimate your costs
+          </a>
+        </div>
+        {updatedAt && (
+          <p class="mt-8 text-sm text-neutral-500">
+            Last updated: {updatedAt}
+          </p>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section id="calculator" class="py-16 md:py-24 bg-zinc-50">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="font-heading font-light text-4xl md:text-5xl text-black mb-4">
+            Estimate your costs today
+          </h2>
+          <p class="text-lg text-neutral-700 max-w-2xl mx-auto">
+            Use our business loan calculator to find out how much you can borrow and what your repayments might look like.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl border border-neutral-200 p-6 md:p-8 shadow-sm">
+          <DashboardCalculator client:load />
+        </div>
+        <p class="mt-6 text-sm text-neutral-500 text-center">
+          Calculations are indicative only and intended as a guide. The figures calculated are not a statement of actual repayments and do not constitute a loan offer.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
